@@ -27,7 +27,7 @@ Welcome to "Riders Paradise" – where the thrill of the open road meets cutting
 Clone the project
 
 ```bash
-  git clone all3n2601/Riders_Paradise
+  git clone all3n2601/Riders-Paradise
 ```
 
 Go to the project directory
