@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../assets/styles/Signup.css";
 import img from "../assets/img_avatar2.png";
 import axios from "axios";
@@ -9,6 +9,7 @@ function SignUp() {
   const [email, setEmail] = useState();
   const [country, setCountry] = useState();
   const [password, setPassword] = useState();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,7 +20,10 @@ function SignUp() {
         country,
         password,
       })
-      .then((result) => console.log(result))
+      .then((result) => {
+        console.log(result);
+        navigate("/home");
+      })
       .catch((err) => console.log(err));
   };
   return (

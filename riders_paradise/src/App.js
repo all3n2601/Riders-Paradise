@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Login from "./pages/Login";
 import SignUp from "./pages/Signup";
 import ForgotPassword from "./pages/Forgotpassword";
+import HomePage from "./pages/About";
 
 function LandingPage() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/forgotpwd" element={<ForgotPassword />} />
+          <Route path="/home" element={<HomePage />} />
         </Routes>
       </Router>
     </div>

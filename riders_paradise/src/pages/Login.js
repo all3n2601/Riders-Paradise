@@ -1,19 +1,25 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../assets/styles/Signin.css";
 import img from "../assets/signin.png";
 import axios from "axios";
 
 function Login() {
   const [email, setEmail] = useState();
-
   const [password, setPassword] = useState();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:4000/register", { email, password })
-      .then((result) => console.log(result))
+      .post("http://localhost:4000/login", { email, password })
+      .then((result) => {
+        console.log(result);
+
+        if (result.data === "Success") {
+          navigate("/home");
+        }
+      })
       .catch((err) => console.log(err));
   };
 
