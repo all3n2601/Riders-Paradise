@@ -1,43 +1,79 @@
-import React from "react";
+import { React, useState } from "react";
 import { Link } from "react-router-dom";
 import "../assets/styles/Signup.css";
 import img from "../assets/img_avatar2.png";
+import axios from "axios";
 
 function SignUp() {
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [country, setCountry] = useState();
+  const [password, setPassword] = useState();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:4000/register", {
+        name,
+        email,
+        country,
+        password,
+      })
+      .then((result) => console.log(result))
+      .catch((err) => console.log(err));
+  };
   return (
     <div>
       <div className="main">
         <div className="content">
-          <form action="POST">
+          <form onSubmit={handleSubmit}>
             <div className="imgcontainer">
               <img className="avatar" src={img} alt="Avatar" />
             </div>
             <h2>Create Account</h2>
             <h4>*indicates required field</h4>
             <div className="container">
-              <label for="username">
+              <label htmlFor="name">
                 <b>Name*</b>
               </label>
               <br />
-              <input type="text" placeholder="Enter Name" id="username" />
+              <input
+                name="name"
+                type="text"
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
+                placeholder="Enter Name"
+                id="name"
+              />
               <br />
-              <label for="email">
+              <label htmlFor="email">
                 <b>Email*</b>
               </label>
               <br />
-              <input type="email" placeholder="Enter Email" id="email" />
+              <input
+                type="email"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+                placeholder="Enter Email"
+                id="email"
+              />
               <br />
-              <label for="password">
+              <label htmlFor="password">
                 <b>Password*</b>
               </label>
               <br />
               <input
                 type="password"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
                 placeholder="Enter Password"
                 id="password"
               />
               <br />
-              <label for="repassword">
+              <label htmlFor="repassword">
                 <b>ReEnter Password*</b>
               </label>
               <br />
@@ -47,9 +83,15 @@ function SignUp() {
                 id="repassword"
               />
               <br />
-              <label for="country">Country</label>
+              <label htmlFor="country">Country</label>
               <br />
-              <select name="Choose your country">
+              <select
+                id="country"
+                name="country"
+                onChange={(e) => {
+                  setCountry(e.target.value);
+                }}
+              >
                 <option value="">Choose your country</option>
                 <option value="afghanistan">Afghanistan</option>
                 <option value="albania">Albania</option>
@@ -259,17 +301,17 @@ function SignUp() {
                 <option value="zimbabwe">Zimbabwe</option>
               </select>
               <br />
-              <button type="submit" class="loginbtn">
+              <button type="submit" className="loginbtn">
                 SignUp
               </button>
               <br />
             </div>
-            <div class="cancelcontainer">
-              <Link class="dacc" to="/login">
+            <div className="cancelcontainer">
+              <Link className="dacc" to="/login">
                 Already have a account?
               </Link>
               <br />
-              <button type="button" class="cancelbtn">
+              <button type="button" className="cancelbtn">
                 Cancel
               </button>
             </div>
