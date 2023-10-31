@@ -1,0 +1,92 @@
+form {
+    width: fit-content;
+    border-radius: 10px;
+    padding-top: 1px;
+    background-color: #fff;
+}
+
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 50px;
+}
+
+input[type=checkbox] {
+    accent-color: red;
+    float: left;
+    margin-left: 10px;
+    margin-right: 0px;
+}
+
+button {
+    background-color: #07a0ec;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 50px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+.avatar {
+    width: 20%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+Link {
+    text-decoration: none;
+    color: #07a0ec;
+}
+
+.content {
+    text-align: center;
+    padding: 100px 500px;
+}
+
+.main {
+
+    padding: 22px;
+}
+
+.dacc {
+    padding-right: 80px;
+}
+
+.pass {
+    padding-left: 80px;
+}
+
+h2 {
+    color: #00aaff;
+}
+
+label {
+    color: gray;
+    float: left;
+    margin-left: 10px;
+}

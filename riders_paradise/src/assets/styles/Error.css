@@ -1,0 +1,27 @@
+.container{
+    width: 100%;
+    top: 23%;
+    position: absolute;
+    text-align: center;
+    font-family: "montserrat",sans-serif;
+}
+
+.container h1{
+    font-size: 160px;
+    margin: 0;
+    font-weight: 900;
+    letter-spacing: 20px;
+}
+
+.container Link{
+    text-decoration: none;
+    background: #f44336;
+    color: #fff;
+    padding: 12px 24px;
+    display: inline-block;
+    border-radius: 50px;
+}
+
+.container Link:hover{
+    opacity: 0.8
+}
