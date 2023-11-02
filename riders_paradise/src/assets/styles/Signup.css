@@ -1,7 +1,7 @@
 form {
     border-radius: 10px;
-    padding-top: 1px;
     background-color: #fff;
+    border: 2px solid black;
 }
 
 input[type=text],
@@ -87,5 +87,5 @@ label {
 }
 
 .dacc {
-    margin-left: 80px;
+    margin-left: 19px;
 }

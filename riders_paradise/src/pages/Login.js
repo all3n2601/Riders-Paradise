@@ -1,20 +1,39 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "../assets/styles/Signin.css";
 import img from "../assets/signin.png";
+import axios from "axios";
 
 function Login() {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:4000/login", { email, password })
+      .then((result) => {
+        console.log(result);
+
+        if (result.data === "Success") {
+          navigate("/home");
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div className="main">
       {" "}
       <div className="content">
-        <form action="POST">
+        <form onSubmit={handleSubmit}>
           <div className="imgcontainer">
             <img className="avatar" src={img} alt="Avatar" />
           </div>
           <h2>Sign In To Continue</h2>
           <div className="container">
-            <label htmlFor="username">
+            <label htmlFor="email">
               {" "}
               <b>Email ID</b>
             </label>
@@ -22,7 +41,7 @@ function Login() {
             <input
               type="text"
               placeholder="Enter Email ID"
-              id="username"
+              id="email"
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
@@ -53,6 +72,7 @@ function Login() {
             <Link className="dacc" to="/signup">
               Don't have an account?
             </Link>
+            <br />
             <Link className="pass" to="/forgotpwd">
               {" "}
               Forgot password?

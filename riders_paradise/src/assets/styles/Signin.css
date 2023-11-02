@@ -74,11 +74,19 @@ Link {
 }
 
 .dacc {
-    padding-right: 80px;
+    border: 1px solid black;
+    padding: 0;
+    margin: 0;
+    display: block;
+    float: left;
 }
 
 .pass {
-    padding-left: 80px;
+    border: 1px solid black;
+    padding: 0;
+    margin: 0;
+    display: block;
+    float: right;
 }
 
 h2 {
