@@ -14,7 +14,7 @@ router.post("/login", (req, res) => {
         res.json("Password is Incorrect");
       }
     } else {
-      res.json("There is No Record");
+      res.json("There is No Record Please Sign Up to Proceed");
     }
   });
 });
