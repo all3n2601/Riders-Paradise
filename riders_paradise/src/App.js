@@ -9,6 +9,7 @@ import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import "../src/styles/styles.css";
 import { Ground } from "./models/Ground";
+import Admin from "./pages/Admin";
 
 function BikeShow() {
   return (
@@ -85,6 +86,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/forgotpwd" element={<ForgotPassword />} />
           <Route path="/home" element={<HomePage />} />
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </Router>
     </div>
