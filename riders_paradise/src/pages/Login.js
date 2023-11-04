@@ -25,63 +25,25 @@ function Login() {
 
   return (
     <div className="main">
-      {" "}
-      <div className="content">
-        <form onSubmit={handleSubmit}>
-          <div className="imgcontainer">
-            <img className="avatar" src={img} alt="Avatar" />
+      <div className="box">
+        <span className="borderLine"></span>
+        <form>
+          <h2>Sign in</h2>
+          <div className="inputBox">
+            <input type="text" required="required"></input>
+            <span>Username</span>
+            <i></i>
           </div>
-          <h2>Sign In To Continue</h2>
-          <div className="container">
-            <label htmlFor="email">
-              {" "}
-              <b>Email ID</b>
-            </label>
-            <br />
-            <input
-              type="text"
-              placeholder="Enter Email ID"
-              id="email"
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-            />
-            <br />
-            <label htmlFor="password">
-              {" "}
-              <b>Password</b>
-            </label>
-            <br />
-            <input
-              type="password"
-              placeholder="Enter Password"
-              id="password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <br />
-            <button type="submit" className="loginbtn">
-              Signin
-            </button>
-            <br />
-            <input type="checkbox" />
-            <label>Remember me</label>
-            <br />
+          <div className="inputBox">
+            <input type="password" required="required"></input>
+            <span>Password</span>
+            <i></i>
           </div>
-          <div className="cancelcontainer">
-            {" "}
-            <Link className="dacc" to="/signup">
-              Don't have an account?
-            </Link>
-            <br />
-            <Link className="pass" to="/forgotpwd">
-              {" "}
-              Forgot password?
-            </Link>
-            <br />
-            <button type="button" className="cancelbtn">
-              Cancel
-            </button>
+          <div className="links">
+            <Link to="/forgotpwd">Forgot Password</Link>
+            <Link className="signup" to="/signup">Don't have a account</Link>
           </div>
+          <input className="login" type="submit" value="Login"></input>
         </form>
       </div>
     </div>
