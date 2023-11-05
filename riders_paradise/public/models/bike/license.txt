@@ -1,0 +1,11 @@
+Model Information:
+* title:	Classic Motorcycle
+* source:	https://sketchfab.com/3d-models/classic-motorcycle-4b76c94d593b4dc297d91c5c545193da
+* author:	Mora (https://sketchfab.com/MoraAzul)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Classic Motorcycle" (https://sketchfab.com/3d-models/classic-motorcycle-4b76c94d593b4dc297d91c5c545193da) by Mora (https://sketchfab.com/MoraAzul) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
