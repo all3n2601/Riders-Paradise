@@ -9,7 +9,7 @@ const userSchema = new Schema({
     unique: [true, "Already Exists"],
     required: [true, "Enter Email"],
   },
-  country: { type: String, required: [true, "Select Country"] },
+  pincode: { type: String, required: [true, "Enter Pincode"] },
   password: { type: String, required: [true, "Password is Required"] },
   entryDate: { type: Date, default: Date.now, required: true },
 });
