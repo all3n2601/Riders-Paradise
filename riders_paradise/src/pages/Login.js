@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../assets/styles/Signin.css";
-import img from "../assets/signin.png";
 import axios from "axios";
 
 function Login() {
@@ -27,21 +26,35 @@ function Login() {
     <div className="main">
       <div className="box">
         <span className="borderLine"></span>
-        <form>
+        <form onSubmit={handleSubmit}>
           <h2>Sign in</h2>
           <div className="inputBox">
-            <input type="text" required="required"></input>
+            <input
+              type="text"
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+              required="required"
+            ></input>
             <span>Username</span>
             <i></i>
           </div>
           <div className="inputBox">
-            <input type="password" required="required"></input>
+            <input
+              type="password"
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+              required="required"
+            ></input>
             <span>Password</span>
             <i></i>
           </div>
           <div className="links">
             <Link to="/forgotpwd">Forgot Password</Link>
-            <Link className="signup" to="/signup">Don't have a account</Link>
+            <Link className="signup" to="/signup">
+              Don't have a account
+            </Link>
           </div>
           <input className="login" type="submit" value="Login"></input>
         </form>
