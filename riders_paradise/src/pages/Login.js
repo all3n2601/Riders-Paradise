@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../assets/styles/Signin.css";
-import img from "../assets/signin.png";
 import axios from "axios";
 
 function Login() {
@@ -42,6 +41,9 @@ function Login() {
           <div className="links-signin">
             <Link to="/forgotpwd">Forgot Password</Link>
             <Link className="signup-signin" to="/signup">Don't have an account</Link>
+            <Link className="signup" to="/signup">
+              Don't have a account
+            </Link>
           </div>
           <span className="beforebutton-signin"></span>
           <input className="login-signin" type="submit" value="Login"></input>
