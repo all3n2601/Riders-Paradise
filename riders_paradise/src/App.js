@@ -4,7 +4,8 @@ import Login from "./pages/Login";
 import { Html } from "@react-three/drei";
 import SignUp from "./pages/Signup";
 import ForgotPassword from "./pages/Forgotpassword";
-import HomePage from "./pages/About";
+import HomePage from "./pages/Homepage";
+import GridView from "./pages/Gridview";
 import {
   CubeCamera,
   Environment,
@@ -29,6 +30,7 @@ import Footer from "./components/footer";
 import { Rings } from "./models/3dmodel/Rings";
 import { Boxes } from "./models/3dmodel/Box";
 import { FloatingGrid } from "./models/3dmodel/FloatingGrid";
+import BikeDetails from "./pages/BikeDetails";
 
 function App() {
   return (
@@ -36,10 +38,15 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<LandingPage />} />
+
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/forgotpwd" element={<ForgotPassword />} />
-          <Route path="/home" element={<HomePage />} />
+          <Route path="/password/forgot" element={<ForgotPassword />} />
+
+          <Route path="/user/home" element={<HomePage />} />
+          <Route path="/user/explore" element={<GridView />} />
+          <Route path="/user/explore/bike" element={<BikeDetails />} />
+
           <Route path="/admin" element={<Admin />} />
         </Routes>
       </Router>

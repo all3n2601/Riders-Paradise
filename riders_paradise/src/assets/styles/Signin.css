@@ -1,21 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-*
-{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
-.main-signin{
+.error-message {
+    color: red;
+    /* Add any other styling you want for the error message */
+}
+
+.main-signin {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #23242a;
+    background: url("../background-signin.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.box-signin{
+.box-signin {
     position: relative;
     width: 380px;
     height: 420px;
@@ -24,79 +31,78 @@
     overflow: hidden;
 }
 
-.box-signin::before{
+.box-signin::before {
     content: '';
     position: absolute;
     top: -50%;
     left: -50%;
     width: 380px;
     height: 420px;
-    background: linear-gradient(0deg,transparent,transparent,#45f3ff,#45f3ff,#45f3ff);
+    background: linear-gradient(0deg, transparent, transparent, #45f3ff, #45f3ff, #45f3ff);
     z-index: 1;
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
 }
 
-.box-signin::after{
+.box-signin::after {
     content: '';
     position: absolute;
     top: -50%;
     left: -50%;
     width: 380px;
     height: 420px;
-    background: linear-gradient(0deg,transparent,transparent,#45f3ff,#45f3ff,#45f3ff);
+    background: linear-gradient(0deg, transparent, transparent, #45f3ff, #45f3ff, #45f3ff);
     z-index: 1;
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
     animation-delay: -3s;
 }
 
-.borderLine-signin{
+.borderLine-signin {
     position: absolute;
     top: 0;
     inset: 0;
 }
 
-.borderLine-signin::before{
+.borderLine-signin::before {
     content: '';
     position: absolute;
     top: -50%;
     left: -50%;
     width: 380px;
     height: 420px;
-    background: linear-gradient(0deg,transparent,transparent,#ff2770,#ff2770,#ff2770);
+    background: linear-gradient(0deg, transparent, transparent, #ff2770, #ff2770, #ff2770);
     z-index: 1;
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
     animation-delay: -1.5s;
 }
 
-.borderLine-signin::after{
+.borderLine-signin::after {
     content: '';
     position: absolute;
     top: -50%;
     left: -50%;
     width: 380px;
     height: 420px;
-    background: linear-gradient(0deg,transparent,transparent,#ff2770,#ff2770,#ff2770);
+    background: linear-gradient(0deg, transparent, transparent, #ff2770, #ff2770, #ff2770);
     z-index: 1;
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
     animation-delay: -4.5s;
 }
 
-@keyframes animate{
-    0%
-    {
+@keyframes animate {
+    0% {
         transform: rotate(0deg);
     }
-    100%
-    {
+
+    100% {
         transform: rotate(360deg);
     }
 }
 
-.box-signin form{
+.box-signin form {
     position: absolute;
     inset: 4px;
     background: #222;
@@ -107,20 +113,20 @@
     flex-direction: column;
 }
 
-.box-signin form h2{
+.box-signin form h2 {
     color: #fff;
     font-weight: 500;
     text-align: center;
     letter-spacing: 0.1em;
 }
 
-.box-signin form .inputBox-signin{
+.box-signin form .inputBox-signin {
     position: relative;
     width: 300px;
     margin-top: 35px;
 }
 
-.box-signin form .inputBox-signin input{
+.box-signin form .inputBox-signin input {
     position: relative;
     width: 100%;
     padding: 20px 10px 10px;
@@ -135,7 +141,7 @@
     z-index: 10;
 }
 
-.box-signin form .inputBox-signin span{
+.box-signin form .inputBox-signin span {
     position: absolute;
     left: 0;
     padding: 20px 10px 10px;
@@ -146,14 +152,14 @@
     transition: 0.5s;
 }
 
-.box-signin form .inputBox-signin input:valid ~ span,
-.box-signin form .inputBox-signin input:focus ~ span{
+.box-signin form .inputBox-signin input:valid~span,
+.box-signin form .inputBox-signin input:focus~span {
     color: #fff;
     font-size: 0.75em;
     transform: translateY(-34px);
 }
 
-.box-signin form .inputBox-signin i{
+.box-signin form .inputBox-signin i {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -166,12 +172,12 @@
     pointer-events: none;
 }
 
-.box-signin form .inputBox-signin input:valid ~ i,
-.box-signin form .inputBox-signin input:focus ~ i{
+.box-signin form .inputBox-signin input:valid~i,
+.box-signin form .inputBox-signin input:focus~i {
     height: 42px;
 }
 
-.box-signin form .links-signin{
+.box-signin form .links-signin {
     margin: 10px 0;
     font-size: 0.75em;
     color: #8f8f8f;
@@ -179,11 +185,11 @@
 }
 
 .box-signin form .links-signin Link:hover,
-.box-signin form .links-signin Link:nth-child(2){
+.box-signin form .links-signin Link:nth-child(2) {
     color: #fff;
 }
 
-.box-signin form input[type="submit"]{
+.box-signin form input[type="submit"] {
     border: none;
     outline: none;
     background: #fff;
@@ -195,20 +201,24 @@
     margin-top: 10px;
 }
 
-.box-signin form input[type="submit"]:active{
+.box-signin form input[type="submit"]:active {
     opacity: 0.8;
 }
 
-.signup-signin{
+.signup-signin {
     padding-left: 57px;
 }
 
-.login-signin{
+.login-signin {
     margin-left: 35%;
     padding-top: 5px;
     padding-bottom: 5px;
 }
 
-.beforebutton-signin{
+.beforebutton-signin {
     padding-bottom: 20px;
+}
+
+.links-signin {
+    padding-top: 20px;
 }

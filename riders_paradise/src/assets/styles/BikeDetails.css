@@ -1,0 +1,82 @@
+.body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    /* Light gray background for the entire page */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.bike-info {
+    width: 60%;
+    /* Set the width for the bike info */
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 20px;
+}
+
+.bike-image {
+    max-width: 100%;
+    border-radius: 15px;
+    /* Rounded corners for the bike image */
+}
+
+.bike-description {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #333;
+    /* Dark gray text color for the description */
+    font-size: 18px;
+    /* Larger font size for the description */
+}
+
+.buttons {
+    text-align: right;
+    /* Align buttons to the right */
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #e74c3c;
+    /* Red background for buttons */
+    color: #fff;
+    /* White text color for buttons */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    /* Rounded corners for buttons */
+    font-size: 16px;
+    /* Font size for buttons */
+}
+
+.bike-details {
+    width: 40%;
+    /* Set the width for bike details */
+    text-align: left;
+    padding: 20px;
+}
+
+.bike-details table {
+    border-collapse: collapse;
+    width: 100%;
+    border: none;
+    /* Remove table border */
+}
+
+.bike-details table th,
+.bike-details table td {
+    padding: 8px 15px;
+    border: none;
+    /* Remove table cell borders */
+}
+
+.bike-details table th {
+    font-weight: bold;
+    color: #3498db;
+    /* Blue text color for the table headers */
+}
