@@ -32,60 +32,41 @@ function SignUp() {
     }
   };
   return (
-    <div className="main">
-      <div className="box">
-        <span className="borderLine"></span>
-        <form onSubmit={handleSubmit}>
-          <h2>Sign Up</h2>
-          <div className="inputBox">
-            <input
-              onChange={(e) => {
-                setName(e.target.value);
-              }}
-              type="text"
-              required="required"
-            ></input>
+    <div className="main-signup">
+      <div className="box-signup">
+        <span className="borderLine-signup"></span>
+        <form>
+          <h2>Sign up</h2>
+          <div className="inputBox-signup">
+            <input type="text" required="required"></input>
             <span>Name</span>
             <i></i>
           </div>
-          <div className="inputBox">
-            <input
-              type="email"
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-              required="required"
-            ></input>
+          <div className="inputBox-signup">
+            <input type="email" required="required"></input>
             <span>Email</span>
             <i></i>
           </div>
-          <div className="inputBox">
-            <input
-              type="password"
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-              required="required"
-            ></input>
+          <div className="inputBox-signup">
+            <input type="password" required="required"></input>
             <span>Password</span>
             <i></i>
           </div>
-          <div className="inputBox">
+          <div className="inputBox-signup">
             <input type="password" required="required"></input>
             <span>ReEnter Password</span>
             <i></i>
           </div>
-          <div className="inputBox">
-            <input type="number"></input>
-            <span>Country Zip Code</span>
+          <div className="inputBox-signup">
+            <input type="number" required="required"></input>
+            <span>Zip Code</span>
             <i></i>
           </div>
-          <div className="links">
-            <Link className="signin" to="/Login">
-              Already have an account
-            </Link>
+          <div className="links-signup">
+            <Link className="login-signup" to="/login">Already have an account</Link>
           </div>
-          <input className="login" type="submit" value="Register"></input>
+          <span className="beforebutton-signup"></span>
+          <input className="register-signup" type="submit" value="Register"></input>
         </form>
       </div>
     </div>

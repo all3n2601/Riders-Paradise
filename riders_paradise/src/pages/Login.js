@@ -24,26 +24,27 @@ function Login() {
   };
 
   return (
-    <div className="main">
-      <div className="box">
-        <span className="borderLine"></span>
+    <div className="main-signin">
+      <div className="box-signin">
+        <span className="borderLine-signin"></span>
         <form>
           <h2>Sign in</h2>
-          <div className="inputBox">
+          <div className="inputBox-signin">
             <input type="text" required="required"></input>
             <span>Username</span>
             <i></i>
           </div>
-          <div className="inputBox">
+          <div className="inputBox-signin">
             <input type="password" required="required"></input>
             <span>Password</span>
             <i></i>
           </div>
-          <div className="links">
+          <div className="links-signin">
             <Link to="/forgotpwd">Forgot Password</Link>
-            <Link className="signup" to="/signup">Don't have a account</Link>
+            <Link className="signup-signin" to="/signup">Don't have an account</Link>
           </div>
-          <input className="login" type="submit" value="Login"></input>
+          <span className="beforebutton-signin"></span>
+          <input className="login-signin" type="submit" value="Login"></input>
         </form>
       </div>
     </div>
