@@ -31,6 +31,7 @@ import { Rings } from "./models/3dmodel/Rings";
 import { Boxes } from "./models/3dmodel/Box";
 import { FloatingGrid } from "./models/3dmodel/FloatingGrid";
 import BikeDetails from "./pages/BikeDetails";
+import AddBikeForm from "./pages/AddBike";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
           <Route path="/user/explore/bike" element={<BikeDetails />} />
 
           <Route path="/admin" element={<Admin />} />
+          <Route path="/admin/addbike" element={<AddBikeForm />} />
         </Routes>
       </Router>
     </div>

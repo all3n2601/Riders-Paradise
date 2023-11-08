@@ -1,0 +1,100 @@
+.parent {
+    background: url("../background-addbike.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    display: flex;
+}
+
+.container {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: #fff;
+    width: 1250px;
+    height: 800px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 1);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+
+}
+
+.column {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+
+
+.container .form-box {
+    width: 100%;
+    padding: 40px;
+
+}
+
+.form-box h2 {
+    font-size: 2em;
+    color: #ffffff;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 30%;
+    height: 50px;
+    border-bottom: 2px solid #ffffff;
+    margin: 20px;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #ffffff;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+
+.input-group {
+    position: relative;
+    width: 30%;
+    height: 50px;
+    border-bottom: 2px solid #ffffff;
+}
+
+
+.input-group select {
+    left: 5%;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+}
