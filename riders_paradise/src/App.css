@@ -5,9 +5,7 @@
     background-color: transparent;
 }
 
-
 header {
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,10 +42,6 @@ header {
 
 .sign {
     color: tomato;
-}
-
-.body {
-    min-height: 100%;
 }
 
 .footer {
