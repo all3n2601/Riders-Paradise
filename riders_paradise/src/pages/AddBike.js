@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import "../assets/styles/AddBike.css";
 import axios from "axios";
 
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
+
+const MySwal = withReactContent(Swal);
+
 const AddBikeForm = () => {
   const [error, setError] = useState("");
   const [brand, setBrand] = useState("");
@@ -22,6 +27,27 @@ const AddBikeForm = () => {
   const [quantity, setQuantity] = useState("");
   const [isFeatured, setIsFeatured] = useState(false);
   const [isAvailable, setIsAvailable] = useState(true);
+
+  const resetForm = () => {
+    setBrand("");
+    setModel("");
+    setYear("");
+    setType("Mountain");
+    setFrameMaterial("");
+    setFrameSize("");
+    setColor("");
+    setPrice("");
+    setImageURL("");
+    setDescription("");
+    setFrameType("");
+    setGearSystem("");
+    setBrakes("");
+    setSuspension("");
+    setWheelSize("");
+    setQuantity("");
+    setIsFeatured(false);
+    setIsAvailable(true);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -51,13 +77,23 @@ const AddBikeForm = () => {
       isAvailable,
     };
 
+    const showAlert = ({result}) => {
+      MySwal.fire({
+        title: 'Added Succesfully',
+        text: {result},
+        icon: 'success',
+        confirmButtonText: 'OK',
+      });
+    };
+
     axios
       .post("http://localhost:4000/admin/addbike", bikeData)
       .then((result) => {
         console.log(result);
 
-        if (result.data === "Success") {
-          setError("Added Successfully!");
+        if (result.status === 201) {
+          showAlert(result.data.message);
+          resetForm();
         }
       })
       .catch((err) => setError(err));
