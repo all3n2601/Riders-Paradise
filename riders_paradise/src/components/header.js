@@ -8,7 +8,7 @@ function Header() {
         Riders Paradise
       </Link>
       <nav class="nav-items">
-        <Link className="leftnav" to="/">
+        <Link className="leftnav" to="/user/explore">
           Explore!
         </Link>
         <Link className="leftnav" to="/">

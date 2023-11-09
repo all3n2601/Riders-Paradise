@@ -20,7 +20,7 @@ function Login() {
           navigate("/user/explore");
         }
       })
-      .catch((err) => setError("Passwords Dont Match!"));
+      .catch((err) => setError(err));
   };
 
   return (

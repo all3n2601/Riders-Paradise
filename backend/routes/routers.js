@@ -32,7 +32,7 @@ router.post("/register", async (req, res) => {
 router.post("/admin/addbike", async (req, res) => {
   try {
     const newBike = await mySchemas.Bike.create(req.body);
-    res.json(newBike);
+    res.status(201).json({ message: "Bike added successfully", bike: newBike });
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
   }

@@ -26,7 +26,7 @@ const BikeSchema = new Schema({
     required: true,
   },
   year: {
-    type: Number,
+    type: String,
     required: true,
   },
   type: {
@@ -47,7 +47,7 @@ const BikeSchema = new Schema({
     required: true,
   },
   price: {
-    type: Number,
+    type: String,
     required: true,
   },
   imageURL: {
@@ -63,32 +63,32 @@ const BikeSchema = new Schema({
     gearSystem: String,
     brakes: String,
     suspension: String,
-    wheelSize: Number,
+    wheelSize: String,
   },
   ratings: {
-    averageRating: Number,
-    totalRatings: Number,
+    averageRating: String,
+    totalRatings: String,
     reviews: [
       {
         user: {
           type: String,
           required: true,
         },
-        rating: Number,
+        rating: String,
         comment: String,
       },
     ],
   },
   inventory: {
-    quantity: Number,
+    quantity: String,
     location: String,
   },
   isFeatured: {
-    type: Boolean,
+    type: String,
     default: false,
   },
   isAvailable: {
-    type: Boolean,
+    type: String,
     default: true,
   },
   dateAdded: {
