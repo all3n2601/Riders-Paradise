@@ -14,7 +14,7 @@ function Header() {
         <Link className="leftnav" to="/">
           Home
         </Link>
-        <Link className="leftnav" to="/about">
+        <Link className="leftnav" to="/user/about">
           About
         </Link>
         <Link className="leftnav" to="/contact">
