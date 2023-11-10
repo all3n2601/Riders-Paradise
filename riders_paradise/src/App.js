@@ -32,6 +32,7 @@ import { Boxes } from "./models/3dmodel/Box";
 import { FloatingGrid } from "./models/3dmodel/FloatingGrid";
 import BikeDetails from "./pages/BikeDetails";
 import AddBikeForm from "./pages/AddBike";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
           <Route path="/password/forgot" element={<ForgotPassword />} />
 
           <Route path="/user/home" element={<HomePage />} />
+          <Route path="/user/about" element={<About />} />
           <Route path="/user/explore" element={<GridView />} />
           <Route path="/user/explore/bike" element={<BikeDetails />} />
 
