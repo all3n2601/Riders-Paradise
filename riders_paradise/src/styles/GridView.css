@@ -1,0 +1,101 @@
+.grid-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.filter-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    background-color: #f1f1f1;
+    overflow-y: auto;
+}
+
+.search-bar input {
+
+    width: 100%;
+    padding: 10px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.filter-tabs {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-tabs button {
+    width: 10em;
+    position: relative;
+    height: 3.5em;
+    border: 3px ridge #149CEA;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    transition: 1s;
+    border-radius: 0.3em;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.filter-tabs button::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: #212121;
+    transition: 0.5s;
+    transform-origin: center;
+}
+
+.filter-tabs button::before {
+    content: "";
+    transform-origin: center;
+    position: absolute;
+    top: 80%;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: #212121;
+    transition: 0.5s;
+}
+
+.filter-tabs button:hover::before,
+.filter-tabs button:hover::after {
+    transform: scale(0)
+}
+
+.filter-tabs button:hover {
+    box-shadow: inset 0px 0px 25px #1479EA;
+}
+
+
+.image-grid {
+    width: 55%;
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+.bike-card {
+    font-size: medium;
+    width: 200px;
+    height: 150px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.bike-card img {
+    max-width: 100%;
+    height: auto;
+}

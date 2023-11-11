@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "../assets/styles/AddBike.css";
+import "../../styles/AddBike.css";
 import axios from "axios";
 
-import Swal from 'sweetalert2';
-import withReactContent from 'sweetalert2-react-content';
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 const MySwal = withReactContent(Swal);
 
@@ -77,12 +77,12 @@ const AddBikeForm = () => {
       isAvailable,
     };
 
-    const showAlert = ({result}) => {
+    const showAlert = ({ result }) => {
       MySwal.fire({
-        title: 'Added Succesfully',
-        text: {result},
-        icon: 'success',
-        confirmButtonText: 'OK',
+        title: "Added Succesfully",
+        text: { result },
+        icon: "success",
+        confirmButtonText: "OK",
       });
     };
 

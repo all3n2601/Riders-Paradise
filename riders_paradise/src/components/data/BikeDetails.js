@@ -1,6 +1,6 @@
 import React from "react";
-import "../assets/styles/BikeDetails.css";
-import img from "../assets/bike.jpg";
+import "../../styles/BikeDetails.css";
+import img from "../../assets/bike.jpg";
 
 function BikeDetails() {
   return (

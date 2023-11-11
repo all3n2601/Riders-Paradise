@@ -1,18 +1,11 @@
-import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";
 import { Html } from "@react-three/drei";
-import SignUp from "./pages/Signup";
-import ForgotPassword from "./pages/Forgotpassword";
-import HomePage from "./pages/Homepage";
-import GridView from "./pages/Gridview";
 import {
   CubeCamera,
   Environment,
   OrbitControls,
   PerspectiveCamera,
 } from "@react-three/drei";
-
 import {
   EffectComposer,
   Bloom,
@@ -21,18 +14,26 @@ import {
 import { BlendFunction } from "postprocessing";
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
+
 import "../src/styles/styles.css";
+import "./App.css";
+
+import Login from "./components/auth/Login";
+import SignUp from "./components/auth/Signup";
+import ForgotPassword from "./components/auth/Forgotpassword";
+import HomePage from "./pages/Homepage";
+import GridView from "./components/data/Gridview";
 import { Ground } from "./models/3dmodel/Ground";
 import { Bike } from "./models/3dmodel/Bike";
-import Admin from "./pages/Admin";
-import Header from "./components/header";
-import Footer from "./components/footer";
+import Admin from "./components/admin/Admin";
+import Header from "./components/page/header";
+import Footer from "./components/page/footer";
 import { Rings } from "./models/3dmodel/Rings";
 import { Boxes } from "./models/3dmodel/Box";
 import { FloatingGrid } from "./models/3dmodel/FloatingGrid";
-import BikeDetails from "./pages/BikeDetails";
-import AddBikeForm from "./pages/AddBike";
-import About from "./pages/About";
+import BikeDetails from "./components/data/BikeDetails";
+import AddBikeForm from "./components/admin/AddBike";
+import About from "./components/page/About";
 
 function App() {
   return (
