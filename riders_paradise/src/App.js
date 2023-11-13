@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route , useNavigate } from "react-router-dom";
 import { Html } from "@react-three/drei";
 import {
   CubeCamera,
@@ -64,10 +64,18 @@ function App() {
 export default App;
 
 function LandingPage() {
+
+  let navigate = useNavigate();
+
+
+  const routechanege =() =>{
+    navigate('/user/explore/bikes/654e6695d0ebf3b537eab9cc')
+  }
+
   return (
     <div className="page">
       <Header />
-      <div className="body">
+      <div className="bodydiv">
         <Suspense fallback={null}>
           <Canvas shadows>
             <BikeShow />
@@ -85,10 +93,14 @@ function LandingPage() {
                       cursor: "pointer",
                       marginBlock: "20px",
                     }}
+
+                    onClick={routechanege}
+
                   >
                     Test Ride
                   </button>
                   <button
+                
                     style={{
                       background: "transparent",
                       border: "2px solid white",
@@ -96,6 +108,10 @@ function LandingPage() {
                       padding: "10px 20px",
                       cursor: "pointer",
                     }}
+
+                    onClick={routechanege}
+
+                    // user/explore/bikes/654e6695d0ebf3b537eab9cc
                   >
                     Explore
                   </button>

@@ -1,8 +1,8 @@
 .grid-container {
     display: flex;
+    min-height:80vh;
     flex-direction: row;
-    scroll-behavior: smooth;
-    overflow-y: scroll;
+
 }
 
 .filter-container {
@@ -11,14 +11,14 @@
     align-items: center;
     width: 20%;
     background-color: #212121;
-    overflow-y: auto;
 }
 
 .search-bar input {
-
     width: 100%;
     padding: 10px;
     margin-bottom: 40px;
+    margin-top: 10px;
+    border-radius: 20px;
 }
 
 .filter-tabs {
@@ -79,18 +79,20 @@
 
 
 .image-grid {
-    background-color: white;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(204,255,235,1) 0%, rgba(0,0,0,1) 0%);
     justify-content: center;
     width: 55%;
     flex-grow: 3;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    overflow-y: scroll;
     min-height: fit-content;
 }
 
 .bike-card {
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
     font-weight: lighter;
     font-size: small;
     width: 250px;
@@ -101,15 +103,22 @@
     text-align: center;
     color: red;
     border-radius: 15px;
+    flex: 0 0 calc(33.33% - 10px);
 }
 
 
 .bike-info {
-    display: inline;
+    position: absolute;
+    background-color: rgba(15, 14, 14, 0.8);
+    bottom: 0;
+    left: 0;
     text-align: start;
     color: red;
     opacity: 0;
-    transition: opacity 0.5s;
+    color: aliceblue;
+    box-sizing: border-box;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-out;
 }
 
 .bike-card:hover .bike-image img {
@@ -118,4 +127,8 @@
 
 .bike-card:hover .bike-info {
     opacity: 1;
+}
+
+.bike-card:hover .bike-info {
+    transform: translateY(0);
 }

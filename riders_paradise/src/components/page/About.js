@@ -5,7 +5,7 @@ import "../../styles/About.css";
 
 function About() {
   return (
-    <div className="main">
+    <div className="main-about">
       <div className="Header">
         <div className="grid1">
           <div className="e1">

@@ -100,9 +100,8 @@ function Gridview() {
               }}
             >
               <div className="bike-info">
-                <h4>
+
                   {bike.brand} {bike.model}
-                </h4>
               </div>
             </div>
           </Link>
