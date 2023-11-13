@@ -2,9 +2,9 @@ import React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import LineChart from "../Charts/Linechart";
-import BarChart from "../Charts/Barchart";
-import PieChart from "../Charts/Piechart";
+import LineChart from "../../models/Charts/Linechart";
+import BarChart from "../../models/Charts/Barchart";
+import PieChart from "../../models/Charts/Piechart";
 
 const DashboardContent = () => {
   return (

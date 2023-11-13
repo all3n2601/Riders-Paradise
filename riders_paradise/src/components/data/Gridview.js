@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from "react";
 import "../../styles/GridView.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function Gridview() {
   const [bikes, setBikes] = useState([]);
@@ -67,10 +68,10 @@ function Gridview() {
             All Bikes
           </button>
           <button
-            className={activeFilter === "Mountain" ? "active" : ""}
-            onClick={() => handleFilter("Mountain")}
+            className={activeFilter === "Cruiser" ? "active" : ""}
+            onClick={() => handleFilter("Cruiser")}
           >
-            Mountain Bikes
+            Cruiser
           </button>
           <button
             className={activeFilter === "Road" ? "active" : ""}
@@ -78,16 +79,33 @@ function Gridview() {
           >
             Road Bikes
           </button>
+          <button
+            className={activeFilter === "Other" ? "active" : ""}
+            onClick={() => handleFilter("Other")}
+          >
+            Other
+          </button>
         </div>
       </div>
       <div className="image-grid">
         {filteredBikes.map((bike) => (
-          <div key={bike.id} className="bike-card">
-            <img src={bike.imageURL} alt={bike.model} />
-            <h3>
-              {bike.brand} {bike.model}
-            </h3>
-          </div>
+          <Link key={bike._id} to={`/user/explore/bikes/${bike._id}`}>
+            <div
+              className="bike-card"
+              style={{
+                backgroundImage: `url(${bike.imageURL})`,
+                backgroundSize: "cover",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <div className="bike-info">
+                <h4>
+                  {bike.brand} {bike.model}
+                </h4>
+              </div>
+            </div>
+          </Link>
         ))}
       </div>
     </div>

@@ -3,7 +3,7 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 
-const Header = () => {
+const AdminHeader = () => {
   return (
     <AppBar
       position="fixed"
@@ -16,4 +16,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default AdminHeader;

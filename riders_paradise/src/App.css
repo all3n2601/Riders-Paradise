@@ -44,7 +44,7 @@ header {
     color: tomato;
 }
 
-.footer {
+.footer-user {
     display: flex;
     justify-content: space-around;
     align-items: center;

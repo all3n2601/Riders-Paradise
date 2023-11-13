@@ -1,15 +1,16 @@
 .grid-container {
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
 }
 
 .filter-container {
     display: block;
     justify-content: center;
     align-items: center;
-    width: 25%;
-    background-color: #f1f1f1;
+    width: 20%;
+    background-color: #212121;
     overflow-y: auto;
 }
 
@@ -17,7 +18,6 @@
 
     width: 100%;
     padding: 10px;
-    margin-top: 40px;
     margin-bottom: 40px;
 }
 
@@ -41,6 +41,7 @@
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
+    margin: 20px;
 }
 
 .filter-tabs button::after {
@@ -78,24 +79,43 @@
 
 
 .image-grid {
+    background-color: white;
+    justify-content: center;
     width: 55%;
-    flex-grow: 1;
+    flex-grow: 3;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    overflow-y: auto;
+    overflow-y: scroll;
+    min-height: fit-content;
 }
 
 .bike-card {
-    font-size: medium;
-    width: 200px;
+    font-weight: lighter;
+    font-size: small;
+    width: 250px;
+    margin: 15px;
     height: 150px;
-    border: 1px solid #ccc;
+    border: 1px solid goldenrod;
     padding: 10px;
     text-align: center;
+    color: red;
+    border-radius: 15px;
 }
 
-.bike-card img {
-    max-width: 100%;
-    height: auto;
+
+.bike-info {
+    display: inline;
+    text-align: start;
+    color: red;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.bike-card:hover .bike-image img {
+    transform: scale(1.2);
+}
+
+.bike-card:hover .bike-info {
+    opacity: 1;
 }

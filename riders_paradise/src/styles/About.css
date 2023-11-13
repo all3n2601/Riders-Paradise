@@ -35,10 +35,9 @@ img {
 
 .main {
     background-image: url(../assets/background-about.jpg);
-    background-repeat: no-repeat, repeat;
-    height: 800px;
-    background-position: center;
     background-repeat: no-repeat;
+    height: 80%;
+    background-position: center;
     background-size: cover;
     position: relative;
 }

@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import imag from "../../assets/trans.png";
 
 function Header() {
   return (
     <header className="header">
-      <Link to="/" className="logo">
-        Riders Paradise
-      </Link>
+      <img className="logo" src={imag} height={100} width={50} alt="logo" />
       <nav class="nav-items">
         <Link className="leftnav" to="/user/explore">
           Explore!
@@ -17,7 +16,7 @@ function Header() {
         <Link className="leftnav" to="/user/about">
           About
         </Link>
-        <Link className="leftnav" to="/contact">
+        <Link className="leftnav" to="/user/contact">
           Contact Us
         </Link>
         <Link className="sign" to="/login">

@@ -100,9 +100,9 @@ const AddBikeForm = () => {
   };
 
   return (
-    <div className="parent">
-      <div className="container">
-        <div className="form-box">
+    <div className="parent-addbike">
+      <div className="container-addbike">
+        <div className="form-box-addbike">
           <h2>Add Bike</h2>
           {error && <div className="error-message">{error}</div>}
           <form onSubmit={handleSubmit}>
@@ -214,7 +214,7 @@ const AddBikeForm = () => {
               <div className="input-box">
                 <span className="icon"></span>
                 <input
-                  type="text"
+                  type="textarea"
                   name="description"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}

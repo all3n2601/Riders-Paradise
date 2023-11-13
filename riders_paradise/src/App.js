@@ -22,7 +22,6 @@ import Login from "./components/auth/Login";
 import SignUp from "./components/auth/Signup";
 import ForgotPassword from "./components/auth/Forgotpassword";
 import HomePage from "./pages/Homepage";
-import GridView from "./components/data/Gridview";
 import { Ground } from "./models/3dmodel/Ground";
 import { Bike } from "./models/3dmodel/Bike";
 import Admin from "./components/admin/Admin";
@@ -33,7 +32,9 @@ import { Boxes } from "./models/3dmodel/Box";
 import { FloatingGrid } from "./models/3dmodel/FloatingGrid";
 import BikeDetails from "./components/data/BikeDetails";
 import AddBikeForm from "./components/admin/AddBike";
-import About from "./components/page/About";
+import ExplorePage from "./pages/ExplorePage";
+import AboutPage from "./pages/AboutPage";
+import ContactusPage from "./pages/Contactus";
 
 function App() {
   return (
@@ -47,9 +48,10 @@ function App() {
           <Route path="/password/forgot" element={<ForgotPassword />} />
 
           <Route path="/user/home" element={<HomePage />} />
-          <Route path="/user/about" element={<About />} />
-          <Route path="/user/explore" element={<GridView />} />
-          <Route path="/user/explore/bike" element={<BikeDetails />} />
+          <Route path="/user/about" element={<AboutPage />} />
+          <Route path="/user/contact" element={<ContactusPage />} />
+          <Route path="/user/explore" element={<ExplorePage />} />
+          <Route path="/user/explore/bikes/:_id" element={<BikeDetails />} />
 
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/addbike" element={<AddBikeForm />} />

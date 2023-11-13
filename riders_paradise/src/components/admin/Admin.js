@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import Header from "../admin/AdminHeader";
 import Sidebar from "../admin/AdminSidebar";
 import Dashboard from "../admin/AdminDashboard";
+import AddBike from "../admin/AddBike";
+import AdminHeader from "../admin/AdminHeader";
 
-const Layout = () => {
+const Admin = () => {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const handleSelectItem = (item) => {
@@ -12,7 +13,7 @@ const Layout = () => {
 
   return (
     <div style={{ display: "flex" }}>
-      <Header />
+      <AdminHeader />
 
       <Sidebar onSelectItem={handleSelectItem} />
 
@@ -22,14 +23,15 @@ const Layout = () => {
           marginTop: "64px",
           padding: "16px",
           flex: "1",
+          overflowY: "scroll",
         }}
       >
         {selectedItem === "dashboard" && <Dashboard />}
-        {selectedItem === "addbike" && <h1>Add Bike</h1>}
+        {selectedItem === "addbike" && <AddBike />}
         {selectedItem === "settings" && <h1>Settings Page</h1>}
       </div>
     </div>
   );
 };
 
-export default Layout;
+export default Admin;

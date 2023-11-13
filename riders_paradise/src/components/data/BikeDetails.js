@@ -1,71 +1,117 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "../../styles/BikeDetails.css";
-import img from "../../assets/bike.jpg";
+import { useParams } from "react-router-dom";
 
 function BikeDetails() {
+  const id = useParams()._id;
+  const [bike, setBike] = useState(null);
+
+  useEffect(() => {
+    const fetchBikeDetails = async () => {
+      try {
+        console.log(id);
+        const response = await axios.get(
+          `http://localhost:4000/explore/bikes/${id}`
+        );
+        setBike(response.data);
+      } catch (error) {
+        console.error("Error fetching bike details:", error);
+      }
+    };
+
+    fetchBikeDetails();
+  }, [id]);
+
+  if (!bike) {
+    return <div>Loading...</div>; // Add a loading state
+  }
+
   return (
     <div className="body">
-      <div class="bike-info">
-        <img class="bike-image" src={img} alt="Awesome Bike" />
-        <p class="bike-description">
-          Discover the thrill of riding our awesome bike. Whether you're a
-          seasoned rider or a beginner, this bike will take your cycling
-          experience to the next level.
-        </p>
-        <div class="buttons">
-          <button class="button">Book a Test Ride</button>
-          <button class="button">Buy It</button>
+      <div className="bike-info">
+        <div
+          style={{
+            backgroundImage: `url(${bike.imageURL})`,
+            backgroundSize: "cover",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <p className="bike-description">{bike.description}</p>
+          <div className="buttons">
+            <button className="button">Book a Test Ride</button>
+            <button className="button">Buy It</button>
+          </div>
         </div>
       </div>
-      <div class="bike-details">
+      <div className="bike-details">
+        <h2>
+          {bike.brand} {bike.model} ({bike.year})
+        </h2>
         <table>
-          <tr>
-            <th>CC</th>
-            <td>250cc</td>
-          </tr>
-          <tr>
-            <th>Mileage</th>
-            <td>50 mpg</td>
-          </tr>
-          <tr>
-            <th>Colors</th>
-            <td>Red, Blue, Black</td>
-          </tr>
-          <tr>
-            <th>Price</th>
-            <td>$5,999</td>
-          </tr>
-          <tr>
-            <th>Warranty</th>
-            <td>2 years</td>
-          </tr>
-          <tr>
-            <th>Tire Size</th>
-            <td>120/70 R17</td>
-          </tr>
-          <tr>
-            <th>Detail 1</th>
-            <td>Value 1</td>
-          </tr>
-          <tr>
-            <th>Detail 2</th>
-            <td>Value 2</td>
-          </tr>
-          <tr>
-            <th>Detail 3</th>
-            <td>Value 3</td>
-          </tr>
-          <tr>
-            <th>Detail 4</th>
-            <td>Value 4</td>
-          </tr>
-          <tr>
-            <th>Detail 5</th>
-            <td>Value 5</td>
-          </tr>
+          <tbody>
+            <tr>
+              <th>Type</th>
+              <td>{bike.type}</td>
+            </tr>
+            <tr>
+              <th>Frame Material</th>
+              <td>{bike.frameMaterial}</td>
+            </tr>
+            <tr>
+              <th>Frame Size</th>
+              <td>{bike.frameSize}</td>
+            </tr>
+            <tr>
+              <th>Color</th>
+              <td>{bike.color}</td>
+            </tr>
+            <tr>
+              <th>Price</th>
+              <td>${bike.price}</td>
+            </tr>
+            <tr>
+              <th>Frame Type</th>
+              <td>{bike.specifications.frameType}</td>
+            </tr>
+            <tr>
+              <th>Gear System</th>
+              <td>{bike.specifications.gearSystem}</td>
+            </tr>
+            <tr>
+              <th>Brakes</th>
+              <td>{bike.specifications.brakes}</td>
+            </tr>
+            <tr>
+              <th>Suspension</th>
+              <td>{bike.specifications.suspension}</td>
+            </tr>
+            <tr>
+              <th>Wheel Size</th>
+              <td>{bike.specifications.wheelSize}</td>
+            </tr>
+            <tr>
+              <th>Quantity Available</th>
+              <td>{bike.inventory.quantity}</td>
+            </tr>
+            <tr>
+              <th>Location</th>
+              <td>{bike.inventory.location}</td>
+            </tr>
+            <tr>
+              <th>Featured</th>
+              <td>{bike.isFeatured ? "Yes" : "No"}</td>
+            </tr>
+            <tr>
+              <th>Available</th>
+              <td>{bike.isAvailable ? "Yes" : "No"}</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
   );
 }
+
 export default BikeDetails;
