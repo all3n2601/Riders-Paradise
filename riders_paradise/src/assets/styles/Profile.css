@@ -1,0 +1,60 @@
+.body {
+    font-family: Arial, sans-serif;
+    background-color: #bad50d   ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.user-info {
+    width: 30%;
+    /* Set the width for the bike info */
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 40px;
+}
+
+.user-image {
+    max-width: 70%;
+    border-radius: 50%;
+    /* Rounded corners for the bike image */
+}
+
+.user-information {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #981616;
+    /* Dark gray text color for the description */
+    font-size: 20px;
+    /* Larger font size for the description */
+}
+
+.user-details {
+    width: 30%;
+    /* Set the width for bike details */
+    text-align: left;
+    padding: 20px;
+
+}
+
+.user-details table {
+    border-collapse: collapse;
+    width: 50%;
+    border: none;
+    /* Remove table border */
+}
+
+.user-details table th,
+.user-details table td {
+    padding: 8px 15px;
+    border: none;
+    /* Remove table cell borders */
+}
+
+.user-details table th {
+    font-weight: bold;
+    color: #3498db;
+    /* Blue text color for the table headers */
+}
