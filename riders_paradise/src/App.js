@@ -35,6 +35,7 @@ import AddBikeForm from "./components/admin/AddBike";
 import ExplorePage from "./pages/ExplorePage";
 import AboutPage from "./pages/AboutPage";
 import ContactusPage from "./pages/Contactus";
+import Profile from "./components/user/Profile";
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
           <Route path="/user/about" element={<AboutPage />} />
           <Route path="/user/contact" element={<ContactusPage />} />
           <Route path="/user/explore" element={<ExplorePage />} />
+          <Route path="/user/profile" element={<Profile/>} />
           <Route path="/user/explore/bikes/:_id" element={<BikeDetails />} />
 
           <Route path="/admin" element={<Admin />} />
@@ -188,6 +190,6 @@ function BikeShow() {
           offset={[0.0005, 0.0012]}
         />
       </EffectComposer>
-    </>
-  );
+    </>
+  );
 }
