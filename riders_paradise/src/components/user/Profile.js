@@ -1,39 +1,44 @@
 import React from "react";
 import "../../styles/Profile.css";
-import img from "../../assets/profile.jpg";
+function Center({children}) {
+    return (
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          height: '100vh',
+        }}
+      >
+        {children}
+      </div>
+    );
+  }
 
 function Profile() {
-  return (
-    <div className="body">
-      <div class="user-info">
-        <img class="user-image" src={img} alt="Awesome Bike" />
-        <p class="user-infromation">
-          user name
-        </p>
-        
-      </div>
-      <div class="bike-details">
-        <table>
-          <tr>
-            <th>email</th>
-            <td>user@gmail.com</td>
-          </tr>
-          <tr>
-            <th>phone number</th>
-            <td>9876543210</td>
-          </tr>
-          <tr>
-            <th>location</th>
-            <td>chennai</td>
-          </tr>
-          <tr>
-            <th>pincode</th>
-            <td>600005</td>
-          </tr>
-         
-        </table>
-      </div>
-    </div>
-  );
+    return (
+        <Center>
+    
+        <div className="upc">
+            <div className="gradient"></div>
+            <div className="profile-down">
+                <div className="profile-title">User Details</div>
+                <div className="profile-description">
+                <p>Name: Userxyz</p>
+                <p>Emaild: user@gmail.com</p>
+                <p>location: chennai</p>
+                <p>pincode: 600005</p>
+
+                </div>
+                <div className="profile-button"><a href="support@ridersparadise.com">Contact Us</a></div>
+                <div className="profile-button"><a href="purchase history">Purchases</a></div>
+                <div className="profile-button"><a href="Privacy Policy">Privacy Policy</a></div>
+                <div className="profile-button"><a href="Transaction History">Transactions </a></div>
+            </div>
+
+        </div>
+        </Center>
+    )
+
 }
 export default Profile;

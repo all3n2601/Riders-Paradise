@@ -1,60 +1,56 @@
-.body {
-    font-family: Arial, sans-serif;
-    background-color: #bad50d   ;
-    display: flex;
-    justify-content: center;
+ 
+  .upc {
+    
+    width: 350px;
+    margin: 20px;
+    border-radius: 4px;
+    padding-bottom: 20px;
+    background: lightgray;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-.user-info {
-    width: 30%;
-    /* Set the width for the bike info */
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    padding: 40px;
-}
-
-.user-image {
-    max-width: 70%;
-    border-radius: 50%;
-    /* Rounded corners for the bike image */
-}
-
-.user-information {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    color: #981616;
-    /* Dark gray text color for the description */
-    font-size: 20px;
-    /* Larger font size for the description */
-}
-
-.user-details {
-    width: 30%;
-    /* Set the width for bike details */
-    text-align: left;
-    padding: 20px;
-
-}
-
-.user-details table {
-    border-collapse: collapse;
-    width: 50%;
-    border: none;
-    /* Remove table border */
-}
-
-.user-details table th,
-.user-details table td {
-    padding: 8px 15px;
-    border: none;
-    /* Remove table cell borders */
-}
-
-.user-details table th {
+    justify-content: center;
+  }
+  
+  .gradient {
+    background-image: linear-gradient(#91baff, #205fff);
+    height: 85px;
+    border-radius: 4px 4px 0px 0px;
+  }
+  
+  .profile-title {
+    font-size: 36px;
     font-weight: bold;
-    color: #3498db;
-    /* Blue text color for the table headers */
-}
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile-description {
+    padding: 20px 40px;
+    font-size: 16px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile-button {
+    font-size: 16px;
+    background: #2b5dff;
+    margin: 10px 100px;
+    padding: 8px 20px;
+    border-radius: 40px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  .centered-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  body {
+    background-color: lightcyan;
+  }
