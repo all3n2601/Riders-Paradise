@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 
 .page {
+
     margin: 0;
     background-color: transparent;
 }
@@ -44,7 +45,7 @@ header {
     color: tomato;
 }
 
-.footer {
+.footer-user {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -82,5 +83,9 @@ header {
 
 button {
     margin-right: 10px;
-    /* Add space to the right of each button */
+   
+}
+
+.bodydiv{
+    min-height: 80vh;
 }

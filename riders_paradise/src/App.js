@@ -1,18 +1,11 @@
-import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";
+import { BrowserRouter as Router, Routes, Route , useNavigate } from "react-router-dom";
 import { Html } from "@react-three/drei";
-import SignUp from "./pages/Signup";
-import ForgotPassword from "./pages/Forgotpassword";
-import HomePage from "./pages/Homepage";
-import GridView from "./pages/Gridview";
 import {
   CubeCamera,
   Environment,
   OrbitControls,
   PerspectiveCamera,
 } from "@react-three/drei";
-
 import {
   EffectComposer,
   Bloom,
@@ -21,18 +14,29 @@ import {
 import { BlendFunction } from "postprocessing";
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
+
 import "../src/styles/styles.css";
+import "./App.css";
+
+import Login from "./components/auth/Login";
+import SignUp from "./components/auth/Signup";
+import ForgotPassword from "./components/auth/Forgotpassword";
+import HomePage from "./pages/Homepage";
 import { Ground } from "./models/3dmodel/Ground";
 import { Bike } from "./models/3dmodel/Bike";
-import Admin from "./pages/Admin";
-import Header from "./components/header";
-import Footer from "./components/footer";
+import Admin from "./components/admin/Admin";
+import Header from "./components/page/header";
+import Footer from "./components/page/footer";
 import { Rings } from "./models/3dmodel/Rings";
 import { Boxes } from "./models/3dmodel/Box";
 import { FloatingGrid } from "./models/3dmodel/FloatingGrid";
-import BikeDetails from "./pages/BikeDetails";
-import AddBikeForm from "./pages/AddBike";
-import Profile from "./pages/Profile";
+import BikeDetails from "./components/data/BikeDetails";
+import AddBikeForm from "./components/admin/AddBike";
+import ExplorePage from "./pages/ExplorePage";
+import AboutPage from "./pages/AboutPage";
+import ContactusPage from "./pages/Contactus";
+import Profile from "./components/user/Profile";
+
 function App() {
   return (
     <div className="App">
@@ -43,12 +47,13 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/password/forgot" element={<ForgotPassword />} />
-          
-          <Route path="/user/home" element={<HomePage />} />
-          <Route path="/user/profile" element={<Profile />} />
 
-          <Route path="/user/explore" element={<GridView />} />
-          <Route path="/user/explore/bike" element={<BikeDetails />} />
+          <Route path="/user/home" element={<HomePage />} />
+          <Route path="/user/about" element={<AboutPage />} />
+          <Route path="/user/contact" element={<ContactusPage />} />
+          <Route path="/user/explore" element={<ExplorePage />} />
+          <Route path="/user/profile" element={<Profile/>} />
+          <Route path="/user/explore/bikes/:_id" element={<BikeDetails />} />
 
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/addbike" element={<AddBikeForm />} />
@@ -61,10 +66,18 @@ function App() {
 export default App;
 
 function LandingPage() {
+
+  let navigate = useNavigate();
+
+
+  const routechanege =() =>{
+    navigate('/user/explore/bikes/654e6695d0ebf3b537eab9cc')
+  }
+
   return (
     <div className="page">
       <Header />
-      <div className="body">
+      <div className="bodydiv">
         <Suspense fallback={null}>
           <Canvas shadows>
             <BikeShow />
@@ -82,10 +95,14 @@ function LandingPage() {
                       cursor: "pointer",
                       marginBlock: "20px",
                     }}
+
+                    onClick={routechanege}
+
                   >
                     Test Ride
                   </button>
                   <button
+                
                     style={{
                       background: "transparent",
                       border: "2px solid white",
@@ -93,6 +110,10 @@ function LandingPage() {
                       padding: "10px 20px",
                       cursor: "pointer",
                     }}
+
+                    onClick={routechanege}
+
+                    // user/explore/bikes/654e6695d0ebf3b537eab9cc
                   >
                     Explore
                   </button>
@@ -169,6 +190,6 @@ function BikeShow() {
           offset={[0.0005, 0.0012]}
         />
       </EffectComposer>
-    </>
-  );
+    </>
+  );
 }

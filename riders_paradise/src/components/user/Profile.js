@@ -1,8 +1,8 @@
 import React from "react";
-import "../assets/styles/Profile.css";
-import img from "../assets/profile.jpg";
+import "../../styles/Profile.css";
+import img from "../../assets/profile.jpg";
 
-function BikeDetails() {
+function Profile() {
   return (
     <div className="body">
       <div class="user-info">
@@ -36,4 +36,4 @@ function BikeDetails() {
     </div>
   );
 }
-export default BikeDetails;
+export default Profile;

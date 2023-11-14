@@ -11,7 +11,6 @@
 
 .bike-info {
     width: 60%;
-    /* Set the width for the bike info */
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -21,7 +20,8 @@
 .bike-image {
     max-width: 100%;
     border-radius: 15px;
-    /* Rounded corners for the bike image */
+    background-repeat: no-repeat;
+
 }
 
 .bike-description {
