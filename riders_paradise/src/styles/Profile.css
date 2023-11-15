@@ -1,104 +1,113 @@
-body {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: Arial, sans-serif;
-  background-image: url(../assets/RIDERS.png);
-  background-size: cover;
-  background-position: center center;
- }
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  position: relative;
+  width: 800px;
+  max-width: 900px;
+  padding: 30px;
+  margin: 0 350px;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px black;
+  background-color: white;
+  justify-content: center;
+}
+
+.container header {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.container form {
+  position: relative;
+  min-height: 490px;
+  background-color: whitesmoke;
+  background-size: 542px;
+  background-position: center ;
+  margin-top: 16px;
+  justify-content: space-between;
+}
+
+.container form .details {
+  margin-top: 30px;
+}
+
+.fields {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  flex-wrap: wrap;
+  
+}
+
+.input-field label {
+  display: block;
+  font-size: 16px;
+  font-style: bold;
+  font-weight: 500;
+  color: black;
+  margin-left: 20px;
+  justify-content: center;
+}
+
+.input-field input {
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 400;
+  border: 3px solid black;
+  color: black;
+  outline: none;
+  padding: 0 15px;
+  height: 50px;
+  margin: 25px 0;
+  size: 100px;
+}
+
+.input-field input:is(:focus, :valid) {
+  box-shadow: 0 3px 6px black;
+
+}
+
+.input-field input[type="date"]:valid {
+  color: black;
+}
 
 h1{
   text-align: center;
-  color: aliceblue;
+  color: black;
+  border-style: groove;
+
  }
 
- h2{
+ button[type="submit"] {
+  display: block;
+  width: 100px;
+  margin: auto;
   text-align: center;
-  color: aliceblue;
+  padding: 5px;
+  margin-top: 10px;
+  background-color: red;
+
+  color: white;
+  border-radius: 20%;
  }
  p{
   text-align: center;
   color: black;
  }
- 
- .container {
-  width: 30px;
-  margin: 0 auto;
- }
- 
- label {
-  display: block;
-  margin-top: 20px;
 
- }
- 
- input[type="text"], input[type="email"], input[type="tel"], select {
-  width: 250px;
-  padding: 1px;
-  border: 5px solid #111b7a;
-  margin: 15px 0;
-  box-sizing: border-box;
-  justify-content: space-around;
- }
- 
- button[type="submit"] {
-  display: block;
-  width: 20%;
-  margin: auto;
-  text-align: center;
-  padding: 5px;
-  margin-top: 10px;
-  background-color: rgb(76, 124, 175);
-  color: white;
-  border: none;
-  cursor: pointer;
- }
- 
-body{
-  background: #4e82a4;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
-}
 
-.form{
-  background-color: rgb(189, 196, 219);
-  border-radius: 5px;
-  width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  height: 600px;
-}
 
-.form-body{
-  text-align: center;
-  padding: 20px 100px;
-}
 
-.form-body > *{
-  padding: 15px;
-}
-
-.form__label{
-  width: 200%;
-}
-
-.form_input{
-  width: 60%;
-}
-
-.footer{
-  text-align: center;
-}
-.form-box {
-  display: flex;
-  justify-content: space-evenly;
-
- }
- .gender-radio-group {
-  display: flex;
-  margin-bottom: 20px;
-  
- }
- .side-by-side {
-  display: flex;
-  flex-direction: column;
-}
