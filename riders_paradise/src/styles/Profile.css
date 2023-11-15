@@ -1,10 +1,22 @@
 body {
   font-family: Arial, sans-serif;
+  background-image: url(../assets/RIDERS.png);
+  background-size: cover;
+  background-position: center center;
  }
 
 h1{
   text-align: center;
   color: aliceblue;
+ }
+
+ h2{
+  text-align: center;
+  color: aliceblue;
+ }
+ p{
+  text-align: center;
+  color: black;
  }
  
  .container {
@@ -19,16 +31,18 @@ h1{
  }
  
  input[type="text"], input[type="email"], input[type="tel"], select {
-  width: 300px;
+  width: 250px;
   padding: 1px;
   border: 5px solid #111b7a;
-  margin: 10px 0;
+  margin: 15px 0;
   box-sizing: border-box;
+  justify-content: space-around;
  }
  
  button[type="submit"] {
   display: block;
   width: 20%;
+  margin: auto;
   text-align: center;
   padding: 5px;
   margin-top: 10px;
@@ -42,15 +56,16 @@ body{
   background: #4e82a4;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
 }
 
 .form{
   background-color: rgb(189, 196, 219);
   border-radius: 5px;
-  width: 550px;
+  width: 800px;
   margin: 20px auto;
   padding: 20px;
-  /* height: 600px; */
+  height: 600px;
 }
 
 .form-body{
@@ -63,7 +78,7 @@ body{
 }
 
 .form__label{
-  width: 40%;
+  width: 200%;
 }
 
 .form_input{
@@ -72,4 +87,18 @@ body{
 
 .footer{
   text-align: center;
+}
+.form-box {
+  display: flex;
+  justify-content: space-evenly;
+
+ }
+ .gender-radio-group {
+  display: flex;
+  margin-bottom: 20px;
+  
+ }
+ .side-by-side {
+  display: flex;
+  flex-direction: column;
 }
