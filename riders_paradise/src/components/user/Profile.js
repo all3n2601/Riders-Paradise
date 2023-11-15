@@ -40,5 +40,4 @@ function Profile() {
         </Center>
     )
 
-}
 export default Profile;
