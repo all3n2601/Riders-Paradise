@@ -1,56 +1,75 @@
- 
-  .upc {
-    
-    width: 350px;
-    margin: 20px;
-    border-radius: 4px;
-    padding-bottom: 20px;
-    background: lightgray;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .gradient {
-    background-image: linear-gradient(#91baff, #205fff);
-    height: 85px;
-    border-radius: 4px 4px 0px 0px;
-  }
-  
-  .profile-title {
-    font-size: 36px;
-    font-weight: bold;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .profile-description {
-    padding: 20px 40px;
-    font-size: 16px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .profile-button {
-    font-size: 16px;
-    background: #2b5dff;
-    margin: 10px 100px;
-    padding: 8px 20px;
-    border-radius: 40px;
-  }
-  
-  a {
-    text-decoration: none;
-    color: white;
-  }
-  .centered-div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
+body {
+  font-family: Arial, sans-serif;
+ }
 
-  body {
-    background-color: lightcyan;
-  }
+h1{
+  text-align: center;
+  color: aliceblue;
+ }
+ 
+ .container {
+  width: 30px;
+  margin: 0 auto;
+ }
+ 
+ label {
+  display: block;
+  margin-top: 20px;
+
+ }
+ 
+ input[type="text"], input[type="email"], input[type="tel"], select {
+  width: 300px;
+  padding: 1px;
+  border: 5px solid #111b7a;
+  margin: 10px 0;
+  box-sizing: border-box;
+ }
+ 
+ button[type="submit"] {
+  display: block;
+  width: 20%;
+  text-align: center;
+  padding: 5px;
+  margin-top: 10px;
+  background-color: rgb(76, 124, 175);
+  color: white;
+  border: none;
+  cursor: pointer;
+ }
+ 
+body{
+  background: #4e82a4;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.form{
+  background-color: rgb(189, 196, 219);
+  border-radius: 5px;
+  width: 550px;
+  margin: 20px auto;
+  padding: 20px;
+  /* height: 600px; */
+}
+
+.form-body{
+  text-align: center;
+  padding: 20px 100px;
+}
+
+.form-body > *{
+  padding: 15px;
+}
+
+.form__label{
+  width: 40%;
+}
+
+.form_input{
+  width: 60%;
+}
+
+.footer{
+  text-align: center;
+}
