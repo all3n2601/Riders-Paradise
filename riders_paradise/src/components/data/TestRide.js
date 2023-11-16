@@ -10,15 +10,15 @@ function TestRide() {
             <div className="maincontent">
                 <form>
                     <table>
-                        <tr>
-                            <td><label for="model">Model interested in<span>*</span></label></td>
-                            <td>
+                        <tr className="tr-testride">
+                            <td className="td-testride"><label className="label-testride" for="model">Model interested in<span className="span-testride">*</span></label></td>
+                            <td className="td-testride">
                                 <select className="model">
                                     <option value="">Select Model</option>
                                 </select>
                             </td>
-                            <td><label for="state">State<span>*</span></label></td>
-                            <td>
+                            <td className="td-testride"><label className="label-testride" for="state">State<span className="span-testride">*</span></label></td>
+                            <td className="td-testride">
                                 <select className="state">
                                     <option value="">Select State</option>
                                     <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -60,42 +60,43 @@ function TestRide() {
                                 </select>
                             </td>
                         </tr>
-                        <tr>
-                            <td><label for="city">City<span>*</span></label></td>
-                            <td>
+                        <tr className="tr-testride">
+                            <td className="td-testride"><label className="label-testride" for="city">City<span className="span-testride">*</span></label></td>
+                            <td className="td-testride">
                                 <select  className="city">
                                     <option value="">Select City</option>
                                 </select>
                             </td>
-                            <td><label for="dealer">Dealer<span>*</span></label></td>
-                            <td>
+                            <td className="td-testride"><label className="label-testride" for="dealer">Dealer<span className="span-testride">*</span></label></td>
+                            <td className="td-testride">
                                 <select className="dealer">
                                     <option value="">Select Dealer</option>
                                 </select>
                             </td>
                         </tr>
-                        <tr>
-                            <td><label for="name">Your Name<span>*</span></label></td>
-                            <td><input type="text" placeholder="Your Name" id="name"/></td>
-                            <td><label for="email">Email ID<span>*</span></label></td>
-                            <td><input type="email" placeholder="Your Email" id="email"/></td>
+                        <tr className="tr-testride">
+                            <td className="td-testride"><label className="label-testride" for="name">Your Name<span className="span-testride">*</span></label></td>
+                            <td className="td-testride"><input className="input-testride" type="text" placeholder="Your Name" id="name"/></td>
+                            <td className="td-testride"><label className="label-testride" for="email">Email ID<span className="span-testride">*</span></label></td>
+                            <td className="td-testride"><input className="input-testride" type="email" placeholder="Your Email" id="email"/></td>
                         </tr>
-                        <tr>
-                            <td><label for="phno">Mobile<span>*</span></label></td>
-                            <td><input type="number" id="phno" placeholder="Your Mobile" /></td>
-                            <td><label>Remarks/Suggestions</label></td>
-                            <td><textarea placeholder="Remarks/Suggestions" cols="30" rows="3"></textarea></td>
+                        <tr className="tr-testride">
+                            <td className="td-testride"><label className="label-testride" for="phno">Mobile<span className="span-testride">*</span></label></td>
+                            <td className="td-testride"><input className="input-testride" type="number" id="phno" placeholder="Your Mobile" /></td>
+                            <td className="td-testride"><label className="label-testride">Remarks/Suggestions</label></td>
+                            <td className="td-testride"><textarea className="textarea-testride" placeholder="Remarks/Suggestions" cols="30" rows="3"></textarea></td>
                         </tr>
-                        <tr>
-                            <input className="tickboxlabel" type="checkbox"/>
-                            <label className="tickbox"> I agree to the terms and conditions</label>
+                        <tr className="tr-testride">
+                            <td className="td-testride"><input className="tickboxlabel" type="checkbox"/></td>
+                            <td className="td-testride"><label className="tickbox"> I agree to the terms and conditions</label></td>
                         </tr>
-                        <tr className="btn" colspan="2">
-                            <td className="submitbtn">
-                                <input type="submit" value="Submit"/>
+                        <tr className="td-testride">
+                            <td className="td-testride"></td>
+                            <td className="td-testride">
+                                <input className="input-testride" type="submit" value="Submit"/>
                             </td>
-                            <td className="resetbtn">
-                                <input type="submit" value="Reset"/>
+                            <td className="td-testride">
+                                <input className="input-testride" type="submit" value="Reset"/>
                             </td>
                         </tr>
                     </table>
