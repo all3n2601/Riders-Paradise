@@ -5,30 +5,30 @@
     transform: translate(-50%, -50%);
 }
 
-label{
+.label-testride{
     padding-right: 15px;
 }
 
-input[type="submit"]{
+.input-testride[type="submit"]{
     font-weight: 600;
     width: auto;
-    padding: 5px 100px 5px 100px;
+    padding: 10px 50px 10px 50px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
-    margin-left: 10px;
+    margin-left: 150px;
 }
 
-tr{
+.tr-testride{
     text-align: left;
     padding: 20px;
 }
 
-td{
+.td-testride, .submitbtn, .resetbtn{
     padding: 20px;
 }
 
-select{
+.city, .dealer, .model, .state{
     padding-right: 110px;
     padding-top: 8px;
     padding-bottom: 8px;
@@ -50,19 +50,19 @@ select{
     padding-right: 116px;
 }
 
-input{
+.input-testride{
     padding-left: 5px;
     padding-right: 55px;
     padding-top: 8px;
     padding-bottom: 8px;
 }
 
-textarea{
+.textarea-testride{
     padding-right: 11px;
     padding-left: 5px;
 }
 
-span{
+.span-testride{
     color: red;
 }
 
@@ -73,4 +73,5 @@ span{
 
 .tickbox{
     color: red;
+    padding-right: 15px;
 }
