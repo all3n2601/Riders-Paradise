@@ -1,10 +1,10 @@
 import React from "react";
+import UserHeader from "../components/user/UserHeader";
 
 const HomePage = () => {
   return (
     <div>
-      Hello
-      <div>World</div>
+      <UserHeader />
     </div>
   );
 };

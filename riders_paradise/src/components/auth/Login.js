@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../styles/Signin.css";
 import axios from "axios";
+import { setCurrentUser, setUserRole } from "./auth";
 
 function Login() {
   const [email, setEmail] = useState();
@@ -16,8 +17,16 @@ function Login() {
       .then((result) => {
         console.log(result);
 
-        if (result.data === "Success") {
-          navigate("/user/explore");
+        if (result.data.status === "Success") {
+          const { user, role } = result.data; // Assuming the role information is included in the response
+          setCurrentUser(user);
+          setUserRole(role);
+
+          if (role === "admin") {
+            navigate("/admin");
+          } else {
+            navigate("/user/explore");
+          }
         }
       })
       .catch((err) => setError(err));

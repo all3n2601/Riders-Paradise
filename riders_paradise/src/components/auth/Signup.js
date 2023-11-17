@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../styles/Signup.css";
 import axios from "axios";
+import { setCurrentUser } from "./auth";
 
 function SignUp() {
   const [name, setName] = useState();
@@ -24,6 +25,7 @@ function SignUp() {
         })
         .then((result) => {
           console.log(result);
+          setCurrentUser(result.data.user);
           navigate("/user/home");
         })
         .catch((err) => console.log(err));
