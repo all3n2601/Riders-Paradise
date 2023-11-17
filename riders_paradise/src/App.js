@@ -36,6 +36,11 @@ import ExplorePage from "./pages/ExplorePage";
 import AboutPage from "./pages/AboutPage";
 import ContactusPage from "./pages/Contactus";
 import Profile from "./components/user/Profile";
+import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
+import ForgotpasswordPage from "./pages/ForgotpasswordPage";
+import BikeDetailsPage from "./pages/BikeDetailsPage";
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
   return (
@@ -44,16 +49,16 @@ function App() {
         <Routes>
           <Route exact path="/" element={<LandingPage />} />
 
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/password/forgot" element={<ForgotPassword />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/password/forgot" element={<ForgotpasswordPage />} />
 
           <Route path="/user/home" element={<HomePage />} />
           <Route path="/user/about" element={<AboutPage />} />
           <Route path="/user/contact" element={<ContactusPage />} />
           <Route path="/user/explore" element={<ExplorePage />} />
-          <Route path="/user/profile" element={<Profile/>} />
-          <Route path="/user/explore/bikes/:_id" element={<BikeDetails />} />
+          <Route path="/user/profile" element={<ProfilePage />} />
+          <Route path="/user/explore/bikes/:_id" element={<BikeDetailsPage />} />
 
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/addbike" element={<AddBikeForm />} />
