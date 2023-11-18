@@ -16,7 +16,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 80vh;
     background: url("../assets/background-signin.jpg");
     background-repeat: no-repeat;
     background-size: cover;

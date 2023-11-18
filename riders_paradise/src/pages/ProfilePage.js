@@ -1,13 +1,19 @@
 import Profile from "../components/user/Profile";
 import Footer from "../components/page/footer";
-import Header from "../components/page/header";
+import { userRole } from "../components/auth/auth";
+import UserHeader from "../components/user/UserHeader";
+import Forbidden from "../components/auth/Forbidden";
 
 function ProfilePage() {
-  return (
+  return userRole === "user" ? (
     <div>
-      <Header />
+      <UserHeader />
       <Profile />
       <Footer />
+    </div>
+  ) : (
+    <div>
+      <Forbidden />
     </div>
   );
 }

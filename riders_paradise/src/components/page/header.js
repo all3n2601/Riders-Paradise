@@ -48,10 +48,10 @@ function Header() {
         <Link style={leftNavStyle} to="/">
           Home
         </Link>
-        <Link style={leftNavStyle} to="/user/about">
+        <Link style={leftNavStyle} to="/about">
           About
         </Link>
-        <Link style={leftNavStyle} to="/user/contact">
+        <Link style={leftNavStyle} to="/contact">
           Contact Us
         </Link>
         <Link style={signInStyle} to="/login">

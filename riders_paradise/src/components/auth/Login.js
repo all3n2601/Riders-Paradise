@@ -21,11 +21,12 @@ function Login() {
           const { user, role } = result.data; // Assuming the role information is included in the response
           setCurrentUser(user);
           setUserRole(role);
+          console.log(role);
 
           if (role === "admin") {
             navigate("/admin");
           } else {
-            navigate("/user/explore");
+            navigate("/user/home");
           }
         }
       })

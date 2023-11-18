@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route , useNavigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 import { Html } from "@react-three/drei";
 import {
   CubeCamera,
@@ -41,6 +46,11 @@ import SignupPage from "./pages/SignupPage";
 import ForgotpasswordPage from "./pages/ForgotpasswordPage";
 import BikeDetailsPage from "./pages/BikeDetailsPage";
 import ProfilePage from "./pages/ProfilePage";
+import { getUserRole } from "./components/auth/auth";
+import Contact from "./components/data/Contact";
+import TestRidePage from "./pages/TestRidePage";
+
+const userRole = getUserRole;
 
 function App() {
   return (
@@ -52,16 +62,24 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/password/forgot" element={<ForgotpasswordPage />} />
+          <Route path="/explore" element={<ExplorePage />} />
+          <Route path="/contact" element={<ContactusPage />} />
 
-          <Route path="/user/home" element={<HomePage />} />
+          <Route path="/user/home" element={<HomePage userRole={userRole} />} />
           <Route path="/user/about" element={<AboutPage />} />
-          <Route path="/user/contact" element={<ContactusPage />} />
           <Route path="/user/explore" element={<ExplorePage />} />
-          <Route path="/user/profile" element={<ProfilePage />} />
-          <Route path="/user/explore/bikes/:_id" element={<BikeDetailsPage />} />
+          <Route path="/user/contact" element={<ContactusPage />} />
+          <Route path="/user/testride" element={<TestRidePage />} />
+          <Route
+            path="/user/profile"
+            element={<ProfilePage userRole={userRole} />}
+          />
+          <Route
+            path="/user/explore/bikes/:_id"
+            element={<BikeDetailsPage />}
+          />
 
           <Route path="/admin" element={<Admin />} />
-          <Route path="/admin/addbike" element={<AddBikeForm />} />
         </Routes>
       </Router>
     </div>
@@ -71,13 +89,15 @@ function App() {
 export default App;
 
 function LandingPage() {
-
   let navigate = useNavigate();
 
+  const routechanege = () => {
+    navigate("/user/explore/bikes/654e6695d0ebf3b537eab9cc");
+  };
 
-  const routechanege =() =>{
-    navigate('/user/explore/bikes/654e6695d0ebf3b537eab9cc')
-  }
+  const routechange = () => {
+    navigate("/user/testride");
+  };
 
   return (
     <div className="page">
@@ -100,14 +120,11 @@ function LandingPage() {
                       cursor: "pointer",
                       marginBlock: "20px",
                     }}
-
-                    onClick={routechanege}
-
+                    onClick={routechange}
                   >
                     Test Ride
                   </button>
                   <button
-                
                     style={{
                       background: "transparent",
                       border: "2px solid white",
@@ -115,7 +132,6 @@ function LandingPage() {
                       padding: "10px 20px",
                       cursor: "pointer",
                     }}
-
                     onClick={routechanege}
 
                     // user/explore/bikes/654e6695d0ebf3b537eab9cc
@@ -137,11 +153,8 @@ function BikeShow() {
   return (
     <>
       <OrbitControls target={[0, 0.35, 0]} maxPolarAngle={1.45} />
-
       <PerspectiveCamera makeDefault fov={50} position={[3, 2, 5]} />
-
       <color args={[0, 0, 0]} attach="background" />
-
       <CubeCamera resolution={256} frames={Infinity}>
         {(texture) => (
           <>
@@ -150,7 +163,6 @@ function BikeShow() {
           </>
         )}
       </CubeCamera>
-
       <spotLight
         color={[1, 1, 1]}
         intensity={25}
@@ -173,7 +185,6 @@ function BikeShow() {
       <FloatingGrid />
       <Boxes />
       <Rings />
-
       <EffectComposer>
         {/* <DepthOfField
           focusDistance={0.0035}
@@ -195,6 +206,6 @@ function BikeShow() {
           offset={[0.0005, 0.0012]}
         />
       </EffectComposer>
-    </>
-  );
+    </>
+  );
 }

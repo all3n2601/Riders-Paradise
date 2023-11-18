@@ -3,6 +3,8 @@ import Sidebar from "../admin/AdminSidebar";
 import Dashboard from "../admin/AdminDashboard";
 import AddBike from "../admin/AddBike";
 import AdminHeader from "../admin/AdminHeader";
+import { userRole } from "../auth/auth";
+import Forbidden from "../auth/Forbidden";
 
 const Admin = () => {
   const [selectedItem, setSelectedItem] = useState(null);
@@ -11,7 +13,7 @@ const Admin = () => {
     setSelectedItem(item);
   };
 
-  return (
+  return userRole === "admin" ? (
     <div style={{ display: "flex" }}>
       <AdminHeader />
 
@@ -31,6 +33,8 @@ const Admin = () => {
         {selectedItem === "settings" && <h1>Settings Page</h1>}
       </div>
     </div>
+  ) : (
+    <Forbidden />
   );
 };
 

@@ -1,5 +1,5 @@
-let currentUser = null;
-let userRole = null;
+export let currentUser = null;
+export let userRole = null;
 
 export const setCurrentUser = (user) => {
   currentUser = user;

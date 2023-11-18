@@ -1,12 +1,20 @@
-import Gridview from "../components/data/Gridview";
+import Contact from "../components/data/Contact";
+import UserHeader from "../components/user/UserHeader";
 import Footer from "../components/page/footer";
 import Header from "../components/page/header";
+import { userRole } from "../components/auth/auth";
 
 function ContactusPage() {
-  return (
+  return userRole === "user" ? (
+    <div>
+      <UserHeader />
+      <Contact />
+      <Footer />
+    </div>
+  ) : (
     <div>
       <Header />
-
+      <Contact />
       <Footer />
     </div>
   );

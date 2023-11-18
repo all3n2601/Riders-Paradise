@@ -1,0 +1,291 @@
+.footer-homepage {
+    background-color: black;
+    height: 500px;
+    width: 100%;
+}
+
+.row1-homepage h3 {
+    color: white;
+    padding-left: 80px;
+}
+
+#logofoot-homepage {
+    border-radius: 30px;
+    padding-left: 70px;
+    height: 130px;
+    width: 150px;
+}
+
+#soc-homepage {
+    padding-left: 50px;
+}
+
+#heading-homepage {
+    color: white;
+}
+
+.row2-homepage div {
+    color: white;
+    padding-top: 20px;
+}
+
+.row3-homepage div {
+    color: white;
+    padding-top: 20px;
+}
+
+.row4-homepage div {
+    color: white;
+    padding-top: 20px;
+}
+
+.row5-homepage img {
+    height: 20px;
+    padding-top: 30px;
+    padding-right: 10px;
+    width: 20px;
+}
+
+.row5-homepage a {
+    color: white;
+}
+
+#row5last-homepage {
+    padding-bottom: 100px;
+}
+
+#row4last-homepage {
+    padding-bottom: 275px;
+}
+
+#row3last-homepage {
+    padding-bottom: 275px;
+}
+
+#row2last-homepage {
+    padding-bottom: 237px;
+}
+
+.footer-homepage j {
+    color: red;
+}
+
+.footer-homepage m:hover {
+    background-color: rgba(255, 0, 0, 0.473);
+}
+
+.social-homepage {
+    padding-right: 30px;
+    height: 40px;
+    width: 40px;
+}
+
+.insta-homepage {
+    padding-right: 30px;
+    height: 35px;
+    width: 35px;
+}
+
+#header-homepage {
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+    color: white;
+    padding-left: 500px;
+}
+
+.body-homepage {
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.806);
+}
+
+.id-homepage {
+
+    margin-left: 10px;
+    margin-right: 20px;
+    background: transparent;
+    color: white;
+    Margin-bottom: 50px;
+    border: none;
+    margin-top: 20px;
+}
+
+.id-homepage option {
+    background-color: black;
+    color: white;
+}
+
+.id-homepage:hover {
+    background-color: red;
+    color: black;
+}
+
+.image-container-homepage {
+    width: 24.55%;
+    display: inline-block;
+    position: relative;
+}
+
+.image-container-homepage img {
+    width: 100%;
+    height: 300px;
+}
+
+.text-paragraph-homepage {
+    width: 100%;
+    box-sizing: border-box;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.192);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.header2-homepage {
+    height: 50px;
+    margin-bottom: 10px;
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+    color: white;
+    padding-left: 500px;
+    margin-top: 10px;
+}
+
+#mainimage-homepage {
+    height: 400px;
+    width: 1000px;
+}
+
+#two-homepage,
+#three-homepage,
+#four-homepage,
+#five-homepage,
+#six-homepage,
+#seven-homepage {
+    display: none;
+}
+
+.content-homepage img {
+    object-fit: cover;
+    height: 500px;
+    width: 1500px;
+}
+
+.groupride-homepage {
+    background-color: rgba(65, 65, 65, 0.692);
+}
+
+.groupride-homepage h1 {
+    color: rgb(118, 0, 0);
+}
+
+#b-homepage,
+#c-homepage,
+#d-homepage,
+#e-homepage,
+#f-homepage {
+    display: none;
+}
+
+.footericon-homepage {
+    width: 24.55%;
+    display: inline-block;
+    position: relative;
+}
+
+.footericon-homepage img {
+    width: 100%;
+    height: 300px;
+}
+
+.text-homepage {
+    width: 100%;
+    box-sizing: border-box;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.192);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.slider-homepage {
+
+    width: 1500px;
+    max-width: 100vw;
+    height: 500px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-homepage .list-homepage {
+    position: absolute;
+    width: max-content;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    transition: 1s;
+}
+
+.slider-homepage .list-homepage img {
+    width: 1500px;
+    max-width: 100vw;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-homepage .buttons-homepage {
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider-homepage .buttons-homepage button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff5;
+    color: #fff;
+    border: none;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.slider-homepage .dots-homepage {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.slider-homepage .dots-homepage li {
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.slider-homepage .dots-homepage li.active-homepage {
+    width: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    .slider-homepage {
+        height: 400px;
+    }
+}
