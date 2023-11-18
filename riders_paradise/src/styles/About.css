@@ -1,28 +1,23 @@
-.dev-image {
-    top: -5;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
+img {
+  width: 30%;
+  border-radius: 10%;
 }
 
 .grid1,
 .grid2 {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 20px;
-    padding: 20px;
-    margin-left: 10vw;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+  padding: 20px;
 }
 
 .grid1 {
-    padding-top: 70px;
+  padding-top: 70px;
 }
 
 .grid2 {
-    margin-left: 25vw;
-    margin-top: 50px;
-
-
+  margin-left: 250px;
+  margin-top: 50px;
 }
 
 .e1,
@@ -30,44 +25,23 @@
 .e3,
 .e4,
 .e5 {
-    background-color: steelblue;
-    border-radius: 12px;
-    border: 2px solid #ccc;
-    text-align: center;
-    height: 40vh;
-    width: 20vw;
-    position: relative;
-
+  text-align: center;
 }
 
 .link {
-    text-decoration: none;
-    color: rgb(41, 187, 255);
+  text-decoration: none;
+  color: rgb(101, 255, 41);
 }
 
 .main-about {
-
-    background-repeat: no-repeat;
-    min-height: 80vh;
-    background-position: center;
-    background-size: cover;
-    position: relative;
+  background-image: url(../assets/background-about.jpg);
+  background-repeat: no-repeat;
+  height: 80vh;
+  background-position: center;
+  background-size: cover;
+  position: relative;
 }
 
 .maincontainer {
-    color: rgb(0, 0, 0);
-    justify-content: center;
-    align-items: center;
-    background-color: aliceblue;
-    padding-top: 10vh;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 1em;
-    font-weight: bolder;
-}
-
-.imgcontainer {
-    position: absolute;
-    top: -70px;
-    left: 50%;
-    transform: translateX(-50%);
+  color: white;
 }
