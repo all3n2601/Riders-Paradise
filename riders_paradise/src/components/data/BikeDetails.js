@@ -32,11 +32,11 @@ function BikeDetails() {
   const { images, otherBikeDetails } = bike;
   return (
     <div className="bodyy">
-      <section className="bikeimages">
+      <section className="bikeimg">
         <div
           style={{
             position: "relative",
-            top: "70px",
+            top: "100px",
             left: "350px",
             width: "120vh",
             height: "80vh",
@@ -57,6 +57,7 @@ function BikeDetails() {
           {bike.brand} {bike.model} ({bike.year})
         </h2>
       </section>
+
       <section className="bikeimages">
         <div className="bike-details">
           <table>
@@ -123,9 +124,11 @@ function BikeDetails() {
       </section>
       <section className="bikeimages">
         <div className="bike-description">
+          <h1>Bike Description</h1>
           <p className="desc">{bike.description}</p>
         </div>
       </section>
+
       <section className="bikeimages">
         {bike.images && bike.images.length > 0 && (
           <Carousel>

@@ -1,5 +1,4 @@
 .bodyy {
-  background-image: url("../assets/Bike_background.jpg");
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
@@ -15,16 +14,17 @@
 }
 
 .bike-description {
+  border-style: dashed;
   position: relative;
-  left: -630px;
-  /* margin-top: 20px;
-  margin-bottom: 20px; */
+  top: -350px;
+  left: 10px;
+  width: 50vw;
   background-color: rgba(0, 0, 0, 0.6);
   font-size: 18px;
 }
 
 .desc {
-  color: #000000;
+  color: #ffffff;
 }
 
 .buttons {
@@ -54,10 +54,10 @@
   background-color: rgba(0, 0, 0, 0.6);
   border-style: solid;
   position: relative;
-  top: 750px;
-  left: -400px;
+  top: 10px;
+  left: 750px;
   height: 700px;
-  width: 800px;
+  width: 650px;
   margin-top: 10px;
   /* text-align: center; */
   /* align-content: center; */
@@ -92,7 +92,7 @@
 .bike-header {
   font-weight: bold;
   position: relative;
-  top: -630px;
+  top: -600px;
   left: 50px;
   font-size: 40px;
   text-align: center;
@@ -100,6 +100,14 @@
   width: 1500px;
 }
 .bikeimages {
+  background-color: #000000;
+  display: block;
+  height: 50vh;
+  width: 100vw;
+}
+
+.bikeimg {
+  background-image: url("../assets/Bike_background.jpg");
   display: block;
   height: 100vh;
 }
