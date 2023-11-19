@@ -7,7 +7,7 @@ import withReactContent from "sweetalert2-react-content";
 
 const MySwal = withReactContent(Swal);
 
-const AddBikeForm = () => {
+const EditBikeForm = () => {
   const [error, setError] = useState("");
   const [brand, setBrand] = useState("");
   const [model, setModel] = useState("");
@@ -103,7 +103,7 @@ const AddBikeForm = () => {
     <div className="parent-addbike">
       <div className="container-addbike">
         <div className="form-box-addbike">
-          <h2>Add Bike</h2>
+          <h2>Edit Bike</h2>
           {error && <div className="error-message">{error}</div>}
           <form onSubmit={handleSubmit}>
             <div className="column">
@@ -325,4 +325,4 @@ const AddBikeForm = () => {
   );
 };
 
-export default AddBikeForm;
+export default EditBikeForm;

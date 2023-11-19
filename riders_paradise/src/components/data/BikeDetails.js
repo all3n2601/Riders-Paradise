@@ -45,6 +45,7 @@ function BikeDetails() {
             src={bike.imageURL}
             alt="bike"
             style={{ width: "900px", height: "600px" }}
+            className="slide-image"
           />
           {/* <div className="buttons">
             <button className="button">Test Ride</button>
@@ -128,16 +129,18 @@ function BikeDetails() {
         </div>
       </section>
 
-      <section className="bikeimages">
-        {bike.images && bike.images.length > 0 && (
-          <Carousel>
-            {bike.images.map((images, index) => (
-              <div key={index}>
-                <img src={images} alt={`slide ${index + 1}`} />
-              </div>
-            ))}
-          </Carousel>
-        )}
+      <section className="carousel-section">
+        <div className="bike-carousel">
+          {bike.images && bike.images.length > 0 && (
+            <Carousel>
+              {bike.images.map((images, index) => (
+                <div key={index}>
+                  <img src={images} alt={`slide ${index + 1}`} />
+                </div>
+              ))}
+            </Carousel>
+          )}
+        </div>
       </section>
     </div>
   );
