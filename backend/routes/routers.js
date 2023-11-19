@@ -167,7 +167,7 @@ router.post("/user/bookbike", async (req, res) => {
 router.post("/user/testride", async (req, res) => {
   try {
     const testRide = await mySchemas.TestRide.create(req.body);
-    res.json(testRide);
+    res.json({ status: "Success", testRide });
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
   }

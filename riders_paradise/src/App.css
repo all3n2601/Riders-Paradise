@@ -67,9 +67,8 @@
     margin-right: 10px;
 }
 
-button {
+.button-app {
     margin-right: 10px;
-
 }
 
 .bodydiv {
@@ -85,6 +84,10 @@ button {
     width: 80px;
     height: 80px;
     padding-left: 0;
+}
+
+.heading3 {
+    font-size: large;
 }
 
 .loader:after {
