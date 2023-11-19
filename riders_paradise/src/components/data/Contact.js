@@ -1,6 +1,44 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../styles/Contact.css";
+import styled from "styled-components";
+
+const ContactInfoContainer = styled.td`
+  border: 1px solid black;
+  height: 45vh;
+  background-color: beige;
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+  font-weight: w100;
+  margin-bottom: 10px;
+  align-items: start;
+  justidy-content: start;
+`;
+
+const Divider = styled.div`
+  display: absolute;
+  border-bottom: 1px solid #333;
+  margin-bottom: 10px;
+`;
+
+const ContactItem = styled.div`
+  margin-bottom: 10px;
+  display: relative;
+  align-items: start;
+`;
+
+const Icon = styled.img`
+  vertical-align: start;
+  margin-right: 5px;
+`;
+
+const Label = styled.span``;
+
+const StyledLink = styled.a`
+  text-decoration: none;
+  color: #333;
+`;
 
 function Contact() {
   return (
@@ -33,35 +71,57 @@ function Contact() {
             type="text"
           />
         </td>
-        <td id="second-contactpage">
-          <div id="line1-contactpage">Contact Information</div>
-          <div id="line2-contactpage">______________</div>
-          <div>
-            <img src="images/pin.png" alt="" />
-            Address
-            <Link class="details-contactpage">
-              Hero MotoCorp Limited, The Grand Plaza,Vasant Kunj - Phase -II,
-              New Delhi - 110070
-            </Link>
-          </div>
-          <div>
-            {" "}
-            <img src="images/call.png" alt="" />
-            Phone<Link class="details1-contactpage"> +91-9717785190</Link>
-          </div>
-          <div>
-            <img src="images/mail .png" alt="" />
-            Email
-            <Link class="details2-contactpage">
-              {" "}
-              eshop.support@heromotocorp.com
-            </Link>
-          </div>
-          <div class="line3-contactpage">
-            Nodal Officer Mr. Ajay Kumar Raina
-          </div>
-          <div class="line4-contactpage">Grievance Officer: Gokul Ramesh</div>
-        </td>
+        <ContactInfoContainer>
+          <div className="heading">Contact Information</div>
+          <Divider />
+
+          <ContactItem>
+            <Icon src="images/pin.png" alt="" />
+            <Label>Address:</Label>
+            <StyledLink href="#" className="details-contactpage">
+              Riders Paradise Chennai TamilNadu
+            </StyledLink>
+          </ContactItem>
+
+          <ContactItem>
+            <Icon src="images/call.png" alt="" />
+            <Label>Phone:</Label>
+            <StyledLink
+              href="tel:+919717785190"
+              className="details1-contactpage"
+            >
+              +91-1234567890
+            </StyledLink>
+          </ContactItem>
+
+          <ContactItem>
+            <Icon src="images/mail.png" alt="" />
+            <Label>Email:</Label>
+            <StyledLink
+              href="mailto:admin@ridersparadise.com"
+              className="details2-contactpage"
+            >
+              admin@ridersparadise.com
+            </StyledLink>
+          </ContactItem>
+
+          <ContactItem>
+            <Icon src="images/mail.png" alt="" />
+            <Label>Nodal Officer:</Label>
+            <StyledLink
+              href="mailto:eshop.support@heromotocorp.com"
+              className="details2-contactpage"
+            >
+              Varun Venkateshs
+            </StyledLink>
+          </ContactItem>
+
+          <ContactItem>
+            <Icon src="images/mail.png" alt="" />
+            <Label>Grievance Officer:</Label>
+            <StyledLink className="details2-contactpage">Manigandan</StyledLink>
+          </ContactItem>
+        </ContactInfoContainer>
       </table>
       <div class="div-contactpage">
         <button>SUBMIT</button>

@@ -19,7 +19,7 @@ router.post("/login", async (req, res) => {
         const token = jwt.sign({ id: user._id }, config.get("jwtsecret"), {
           expiresIn: 3600,
         });
-        res.json({ status: "Success", role: user.role, token });
+        res.json({ status: "Success", role: user.role, token, user: user });
       } else {
         res.json({ error: "Password is Incorrect" });
       }
@@ -56,6 +56,45 @@ router.post("/register", async (req, res) => {
 
     res.json(savedUser);
   } catch (error) {
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+router.put("/user/updateprofile", async (req, res) => {
+  const { userId, updatedProfile } = req.body;
+
+  try {
+    const existingUser = await mySchemas.Users.findById(userId);
+
+    if (!existingUser) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    existingUser.name = updatedProfile.name || existingUser.name;
+    existingUser.email = updatedProfile.email || existingUser.email;
+    existingUser.pincode = updatedProfile.pincode || existingUser.pincode;
+
+    if (updatedProfile.password) {
+      const salt = await bcrypt.genSalt(10);
+      const hashedPassword = await bcrypt.hash(updatedProfile.password, salt);
+      existingUser.password = hashedPassword;
+    }
+
+    const updatedUser = await existingUser.save();
+
+    const token = jwt.sign({ id: updatedUser._id }, config.get("jwtsecret"), {
+      expiresIn: 3600,
+    });
+
+    res.json({
+      status: "Success",
+      role: updatedUser.role,
+      token,
+      message: "User profile updated successfully",
+      updatedUser,
+    });
+  } catch (error) {
+    console.error("Error updating user profile:", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 });

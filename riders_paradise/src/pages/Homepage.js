@@ -3,6 +3,7 @@ import UserHeader from "../components/user/UserHeader";
 import Home from "../components/user/Home";
 import Footer from "../components/page/footer";
 import { userRole } from "../components/auth/auth";
+import Forbidden from "../components/auth/Forbidden";
 
 const HomePage = () => {
   console.log("User Role:", userRole);
@@ -14,7 +15,7 @@ const HomePage = () => {
     </div>
   ) : (
     <>
-      <h1>You are Not Authorized</h1>
+      <Forbidden />
     </>
   );
 };

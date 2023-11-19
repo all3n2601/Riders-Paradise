@@ -12,9 +12,9 @@ const UserHeader = () => {
   };
 
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-between align-items-end   ">
       <button
-        class="navbar-toggler"
+        className="navbar-toggler"
         type="button"
         data-toggle="collapse"
         data-target="#navbarSupportedContent"
@@ -22,37 +22,46 @@ const UserHeader = () => {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span className="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <Link class="nav-link" to="/user/home">
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav mr-auto">
+          <li className="nav-item">
+            <Link className="nav-link" to="/user/home">
               Home
             </Link>
           </li>
 
-          <li class="nav-item">
-            <Link class="nav-link" to="/user/explore">
+          <li className="nav-item">
+            <Link className="nav-link" to="/user/explore">
               Explore
             </Link>
           </li>
 
-          <li class="nav-item">
-            <Link class="nav-link" to="/user/about">
+          <li className="nav-item">
+            <Link className="nav-link" to="/user/about">
               About
             </Link>
           </li>
 
-          <li class="nav-item">
-            <Link class="nav-link" to="/user/contact">
+          <li className="nav-item">
+            <Link className="nav-link" to="/user/contact">
               Contact
             </Link>
           </li>
+        </ul>
 
-          <li class="nav-item">
-            <button onClick={handleLogOut}>Logout</button>
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <Link className="nav-link" to="/user/profile">
+              Profile
+            </Link>
+          </li>
+          <li className="nav-item">
+            <button className="btn btn-outline-primary" onClick={handleLogOut}>
+              Logout
+            </button>
           </li>
         </ul>
       </div>

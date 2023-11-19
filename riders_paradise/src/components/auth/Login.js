@@ -19,9 +19,9 @@ function Login() {
 
         if (result.data.status === "Success") {
           const { user, role } = result.data; // Assuming the role information is included in the response
-          setCurrentUser(user);
-          setUserRole(role);
-          console.log(role);
+          setCurrentUser(result.data.user);
+
+          setUserRole(result.data.role);
 
           if (role === "admin") {
             navigate("/admin");

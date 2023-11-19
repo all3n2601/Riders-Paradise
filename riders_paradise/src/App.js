@@ -23,9 +23,6 @@ import { Canvas } from "@react-three/fiber";
 import "../src/styles/styles.css";
 import "./App.css";
 
-import Login from "./components/auth/Login";
-import SignUp from "./components/auth/Signup";
-import ForgotPassword from "./components/auth/Forgotpassword";
 import HomePage from "./pages/Homepage";
 import { Ground } from "./models/3dmodel/Ground";
 import { Bike } from "./models/3dmodel/Bike";
@@ -35,22 +32,15 @@ import Footer from "./components/page/footer";
 import { Rings } from "./models/3dmodel/Rings";
 import { Boxes } from "./models/3dmodel/Box";
 import { FloatingGrid } from "./models/3dmodel/FloatingGrid";
-import BikeDetails from "./components/data/BikeDetails";
-import AddBikeForm from "./components/admin/AddBike";
 import ExplorePage from "./pages/ExplorePage";
 import AboutPage from "./pages/AboutPage";
 import ContactusPage from "./pages/Contactus";
-import Profile from "./components/user/Profile";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import ForgotpasswordPage from "./pages/ForgotpasswordPage";
 import BikeDetailsPage from "./pages/BikeDetailsPage";
 import ProfilePage from "./pages/ProfilePage";
-import { getUserRole } from "./components/auth/auth";
-import Contact from "./components/data/Contact";
 import TestRidePage from "./pages/TestRidePage";
-
-const userRole = getUserRole;
 
 function App() {
   return (
@@ -64,16 +54,14 @@ function App() {
           <Route path="/password/forgot" element={<ForgotpasswordPage />} />
           <Route path="/explore" element={<ExplorePage />} />
           <Route path="/contact" element={<ContactusPage />} />
+          <Route path="/about" element={<AboutPage />} />
 
-          <Route path="/user/home" element={<HomePage userRole={userRole} />} />
+          <Route path="/user/home" element={<HomePage />} />
           <Route path="/user/about" element={<AboutPage />} />
           <Route path="/user/explore" element={<ExplorePage />} />
           <Route path="/user/contact" element={<ContactusPage />} />
           <Route path="/user/testride" element={<TestRidePage />} />
-          <Route
-            path="/user/profile"
-            element={<ProfilePage userRole={userRole} />}
-          />
+          <Route path="/user/profile" element={<ProfilePage />} />
           <Route
             path="/user/explore/bikes/:_id"
             element={<BikeDetailsPage />}

@@ -33,6 +33,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.17.0",
     "react-scripts": "5.0.1",
+    "styled-components": "^6.1.1",
     "sweetalert2": "^11.9.0",
     "sweetalert2-react-content": "^5.0.7",
     "three": "^0.158.0",

@@ -1,1 +1,190 @@
+/* styles.css */
 
+.heading,
+.sub-heading,
+.paragraph {
+    text-align: center;
+    color: black;
+    /* Adjust color as needed */
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.label {
+    display: block;
+    margin-top: 20px;
+}
+
+.text-input {
+    width: 100%;
+    /* Make the text input full width */
+    padding: 10px;
+    border: 1px solid #111b7a;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    /* Make the button full width */
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(76, 124, 175);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.form-container {
+    background-color: rgb(189, 196, 219);
+    border-radius: 5px;
+    width: 100%;
+    /* Make the form container full width */
+    max-width: 800px;
+    /* Add a max-width for better readability */
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.form-body {
+    text-align: center;
+    padding: 20px;
+    /* Adjust padding as needed */
+}
+
+.form-body>* {
+    margin-bottom: 15px;
+    /* Add space between form elements */
+}
+
+.form__label {
+    width: 100%;
+    /* Make the label full width */
+}
+
+.form-input {
+    width: 100%;
+    /* Make the input full width */
+}
+
+/* styles.css */
+
+.heading,
+.sub-heading,
+.paragraph {
+    text-align: center;
+    color: black;
+    /* Adjust color as needed */
+}
+
+.container {
+    width: 100%;
+    /* Adjust as needed */
+    max-width: 600px;
+    /* Add a max-width for better readability */
+    margin: 0 auto;
+}
+
+.label {
+    display: block;
+    margin-top: 20px;
+}
+
+.text-input {
+    width: 100%;
+    /* Make the text input full width */
+    padding: 10px;
+    border: 1px solid #111b7a;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    /* Make the button full width */
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(76, 124, 175);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.form-container {
+    background-color: rgb(189, 196, 219);
+    border-radius: 5px;
+    width: 100%;
+    /* Make the form container full width */
+    max-width: 800px;
+    /* Add a max-width for better readability */
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.form-body {
+    text-align: center;
+    padding: 20px;
+    /* Adjust padding as needed */
+}
+
+.form-body>* {
+    margin-bottom: 15px;
+    /* Add space between form elements */
+}
+
+.form__label {
+    width: 100%;
+    /* Make the label full width */
+}
+
+.form-input {
+    width: 100%;
+    /* Make the input full width */
+}
+
+
+@media (max-width: 768px) {
+    .form-container {
+        max-width: 100%;
+        /* Make the form container full width on smaller screens */
+    }
+}
+
+.radio-input {
+    left: -50px;
+    width: 100%;
+}
+
+.form-box {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow flex items to wrap to the next line */
+    justify-content: space-between;
+}
+
+.gender-radio-group {
+    display: flex;
+    justify-content: space-around;
+    /* Adjust as needed */
+}
+
+.side-by-side {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center align items horizontally */
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        max-width: 100%;
+        /* Make the form container full width on smaller screens */
+    }
+}

@@ -5,7 +5,6 @@ import UserHeader from "../components/user/UserHeader";
 import { userRole } from "../components/auth/auth";
 
 const ExplorePage = () => {
-  console.log(userRole);
   return userRole === "user" ? (
     <div>
       <UserHeader />
@@ -13,11 +12,11 @@ const ExplorePage = () => {
       <Footer />
     </div>
   ) : (
-    <div>
+    <>
       <Header />
       <Gridview />
       <Footer />
-    </div>
+    </>
   );
 };
 

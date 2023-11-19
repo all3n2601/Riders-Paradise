@@ -29,7 +29,6 @@ function BikeDetails() {
   if (!bike) {
     return <div>Loading...</div>; // Add a loading state
   }
-  const { images, otherBikeDetails } = bike;
   return (
     <div className="bodyy">
       <section className="bikeimg">

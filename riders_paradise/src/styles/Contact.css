@@ -2,6 +2,16 @@
     background-color: rgb(255, 255, 255);
 }
 
+.heading {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
 .social-contactpage {
     padding-right: 30px;
     height: 40px;

@@ -40,7 +40,7 @@ function Header() {
 
   return (
     <header style={headerStyle}>
-      <img style={logoStyle} src={imag} height={100} width={95} alt="logo" />
+      <img style={logoStyle} src={imag} height={100} width={50} alt="logo" />
       <nav style={navItemsStyle}>
         <Link style={leftNavStyle} to="/explore">
           Explore!
