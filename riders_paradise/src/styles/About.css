@@ -1,49 +1,17 @@
-img {
-  width: 30%;
-  border-radius: 10%;
+.img-about{
+  border-radius: 50%;
 }
 
-.grid1,
-.grid2 {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  gap: 20px;
-  padding: 20px;
+.p-about{
+  color: black;
+  
 }
 
-.grid1 {
-  padding-top: 70px;
-}
-
-.grid2 {
-  margin-left: 250px;
-  margin-top: 50px;
-}
-
-.e1,
-.e2,
-.e3,
-.e4,
-.e5 {
+.img-container{
+  background-color: blueviolet;
   text-align: center;
 }
 
-.link {
-  text-decoration: none;
-  color: rgb(101, 255, 41);
-}
-
-.main-about {
-  background-image: url(../assets/background-about.jpg);
-  background-repeat: no-repeat;
-  height: 80vh;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  scroll-behavior: smooth;
-  overflow-y: scroll;
-}
-
-.maincontainer {
-  color: white;
+.card-about{
+  text-align: center;
 }
