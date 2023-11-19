@@ -4,7 +4,17 @@ const { isEmail } = require("validator");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  name: { type: String, required: [true, "Enter Name"] },
+  userName: { type: String, required: [true, "Enter UserName"] },
+  mobileNumber: { type: String },
+  address: { type: String },
+  country: { type: String },
+  city: { type: String },
+  state: { type: String },
+  pincode: { type: String },
+  ownershipStatus: { type: String },
+  financeRequired: { type: String },
+  dateofBirth: { type: Date },
+  gender: { type: String },
   email: {
     type: String,
     required: [true, "Please enter an email"],
@@ -12,7 +22,6 @@ const userSchema = new Schema({
     lowercase: true,
     validate: [isEmail, "Please enter a valid email"],
   },
-  pincode: { type: String, required: [true, "Enter Pincode"] },
   password: {
     type: String,
     required: [true, "Please enter a valid password"],

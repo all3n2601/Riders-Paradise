@@ -32,7 +32,7 @@ router.post("/login", async (req, res) => {
 });
 
 router.post("/register", async (req, res) => {
-  const { name, email, pincode, password } = req.body;
+  const { name, email, password } = req.body;
   try {
     const existingUser = await mySchemas.Users.findOne({ email });
 
@@ -48,7 +48,6 @@ router.post("/register", async (req, res) => {
     const newUser = new mySchemas.Users({
       name,
       email,
-      pincode,
       password: hashedPassword,
     });
 

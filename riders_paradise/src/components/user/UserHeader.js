@@ -12,7 +12,7 @@ const UserHeader = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-between align-items-end   ">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between align-items-end   ">
       <button
         className="navbar-toggler"
         type="button"

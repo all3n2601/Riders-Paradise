@@ -6,7 +6,6 @@ import axios from "axios";
 function SignUp() {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
-  const [pincode, setPincode] = useState();
   const [password, setPassword] = useState();
   const [repassword, setRePassword] = useState();
   const [error, setError] = useState("");
@@ -19,7 +18,6 @@ function SignUp() {
         .post("http://localhost:4000/register", {
           name,
           email,
-          pincode,
           password,
         })
         .then((result) => {
@@ -80,17 +78,6 @@ function SignUp() {
               required="required"
             ></input>
             <span>ReEnter Password</span>
-            <i></i>
-          </div>
-          <div className="inputBox-signup">
-            <input
-              type="number"
-              onChange={(e) => {
-                setPincode(e.target.value);
-              }}
-              required="required"
-            ></input>
-            <span>Zip Code</span>
             <i></i>
           </div>
           <div className="links-signup">
