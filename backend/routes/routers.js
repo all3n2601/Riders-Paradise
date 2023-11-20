@@ -32,7 +32,7 @@ router.post("/login", async (req, res) => {
 });
 
 router.post("/register", async (req, res) => {
-  const { name, email, pincode, password } = req.body;
+  const { name, email, password } = req.body;
   try {
     const existingUser = await mySchemas.Users.findOne({ email });
 
@@ -48,7 +48,6 @@ router.post("/register", async (req, res) => {
     const newUser = new mySchemas.Users({
       name,
       email,
-      pincode,
       password: hashedPassword,
     });
 
@@ -168,7 +167,7 @@ router.post("/user/bookbike", async (req, res) => {
 router.post("/user/testride", async (req, res) => {
   try {
     const testRide = await mySchemas.TestRide.create(req.body);
-    res.json(testRide);
+    res.json({ status: "Success", testRide });
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
   }

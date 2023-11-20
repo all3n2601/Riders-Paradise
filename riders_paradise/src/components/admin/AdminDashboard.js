@@ -4,11 +4,10 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import LineChart from "../../models/Charts/Linechart";
 import BarChart from "../../models/Charts/Barchart";
-import PieChart from "../../models/Charts/Piechart";
 
 const DashboardContent = () => {
   return (
-    <div>
+    <div style={{ height: "100vh" }}>
       <Card sx={{ backgroundColor: "white", borderRadius: "15px" }}>
         <CardContent>
           <Typography variant="h5" component="div">
@@ -141,25 +140,6 @@ const DashboardContent = () => {
             BarChart
           </Typography>
           <BarChart />
-        </CardContent>
-      </Card>
-
-      <Card
-        sx={{
-          borderRadius: "15px",
-          position: "relative",
-          top: "-150px",
-          marginTop: "16px",
-          backgroundColor: "white",
-          width: 300,
-          height: 325,
-        }}
-      >
-        <CardContent>
-          <Typography variant="h6" component="div">
-            PieChart
-          </Typography>
-          <PieChart />
         </CardContent>
       </Card>
     </div>
