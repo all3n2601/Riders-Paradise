@@ -52,22 +52,21 @@ const Profile = () => {
 
     const userId = currentUser._id; // Replace with the actual user ID
     const updatedProfile = {
-      userName,
-      mobileNumber,
-      address,
-      country,
-      city,
-      state,
-      pincode,
-      ownershipStatus,
-      financeRequired,
-      dateofBirth,
-      gender,
-      email,
+      userName: userName,
+      mobileNumber: mobileNumber,
+      address: address,
+      country: country,
+      city: city,
+      state: state,
+      pincode: pincode,
+      ownershipStatus: ownershipStatus,
+      financeRequired: financeRequired,
+      dateofBirth: dateofBirth,
+      email: email,
     };
 
     axios
-      .post("http://localhost:4000/user/updateprofile", {
+      .put("http://localhost:4000/user/updateprofile", {
         userId,
         updatedProfile,
       })

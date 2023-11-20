@@ -61,40 +61,28 @@ router.post("/register", async (req, res) => {
 
 router.put("/user/updateprofile", async (req, res) => {
   const { userId, updatedProfile } = req.body;
-
   try {
-    const existingUser = await mySchemas.Users.findById(userId);
+    const updatedUser = await mySchemas.Users.findByIdAndUpdate(
+      userId,
+      { $set: updatedProfile },
+      { new: true, runValidators: true }
+    );
 
-    if (!existingUser) {
-      return res.status(404).json({ error: "User not found" });
-    }
-
-    existingUser.name = updatedProfile.name || existingUser.name;
-    existingUser.email = updatedProfile.email || existingUser.email;
-    existingUser.pincode = updatedProfile.pincode || existingUser.pincode;
-
-    if (updatedProfile.password) {
-      const salt = await bcrypt.genSalt(10);
-      const hashedPassword = await bcrypt.hash(updatedProfile.password, salt);
-      existingUser.password = hashedPassword;
-    }
-
-    const updatedUser = await existingUser.save();
-
-    const token = jwt.sign({ id: updatedUser._id }, config.get("jwtsecret"), {
-      expiresIn: 3600,
-    });
-
-    res.json({
-      status: "Success",
-      role: updatedUser.role,
-      token,
-      message: "User profile updated successfully",
-      updatedUser,
-    });
+    res.status(200).json({ status: "Success", user: updatedUser });
   } catch (error) {
-    console.error("Error updating user profile:", error);
-    res.status(500).json({ error: "Internal Server Error" });
+    console.error("Error updating profile:", error.message);
+
+    // Handle validation error
+    if (error.name === "ValidationError") {
+      const validationErrors = Object.values(error.errors).map(
+        (err) => err.message
+      );
+      return res
+        .status(400)
+        .json({ status: "Error", errors: validationErrors });
+    }
+
+    res.status(500).json({ status: "Error", message: "Internal Server Error" });
   }
 });
 
@@ -120,13 +108,11 @@ router.put("/admin/editbike/:_id", async (req, res) => {
     );
 
     if (updatedBike) {
-      res
-        .status(200)
-        .json({
-          message: "Bike updated successfully",
-          status: "Success",
-          bike: updatedBike,
-        });
+      res.status(200).json({
+        message: "Bike updated successfully",
+        status: "Success",
+        bike: updatedBike,
+      });
     } else {
       res.status(404).json({ error: "Bike not found" });
     }
@@ -198,6 +184,24 @@ router.post("/user/testride", async (req, res) => {
   try {
     const testRide = await mySchemas.TestRide.create(req.body);
     res.json({ status: "Success", testRide });
+  } catch (error) {
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+router.get("/admin/gettestrides", async (req, res) => {
+  try {
+    const testRides = await mySchemas.TestRide.find();
+    res.json(testRides);
+  } catch (error) {
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+router.get("/admin/getbooked", async (req, res) => {
+  try {
+    const booked = await mySchemas.BookNow.find();
+    res.json(booked);
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
   }
