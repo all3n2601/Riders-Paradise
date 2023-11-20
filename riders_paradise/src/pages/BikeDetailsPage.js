@@ -9,13 +9,11 @@ function BikeDetailsPage() {
     <div>
       <UserHeader />
       <BikeDetails />
-      <Footer />
     </div>
   ) : (
     <div>
       <Header />
       <BikeDetails />
-      <Footer />
     </div>
   );
 }

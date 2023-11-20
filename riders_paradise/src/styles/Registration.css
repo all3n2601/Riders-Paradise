@@ -9,7 +9,6 @@
   background-size: cover;
   justify-content: center;
   min-height: 80vh;
-
 }
 
 .container-r header {
@@ -27,7 +26,6 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-
 }
 
 .input-field-r label {
@@ -36,7 +34,7 @@
   font-style: bold;
   font-weight: 500;
   color: black;
-  margin-left: 20px;
+  margin-left: 100px;
   justify-content: center;
 }
 
@@ -47,6 +45,18 @@
   outline: none;
   padding: 0 15px;
   height: 50px;
+  width: 300px;
+  margin: 20px 0;
+  size: 100px;
+}
+.input-field-r select {
+  font-size: 14px;
+  font-weight: 400;
+  color: black;
+  outline: none;
+  padding: 0 15px;
+  height: 50px;
+  width: 300px;
   margin: 20px 0;
   size: 100px;
 }
@@ -60,7 +70,6 @@
   font-size: 20px;
   font-weight: 600;
   color: black;
-
 }
 
 .heading1-profile::before {
@@ -71,7 +80,6 @@
   height: 3px;
   width: 27px;
   background-color: #4070f4;
-
 }
 
 .btn-profile {
@@ -140,14 +148,16 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 25px;
+  position: relative;
+  top: -70px;
 }
 
 .sec-container-r {
   background-color: white;
   position: relative;
-  width: 70vw;
-  height: 70vh;
-  right: -200px;
+  width: 90vw;
+  height: 600px;
   border-radius: 20px;
   padding: 20px;
+  left: 30px;
 }
