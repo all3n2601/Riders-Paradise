@@ -1,5 +1,5 @@
 
-  .container-p {
+  .container-r {
     position: relative;
     width: 800px;
     max-width: 900px;
@@ -8,18 +8,23 @@
     background-color: white;
     justify-content: center;
   }
-  
-  .container-p header {
-    font-size: 20px;
-    font-weight: 600;
-    color: #333;
+
+  .container-r form {
+    position: relative;
+    min-height: 490px;
+    background-color: white;
+    background-size: 542px;
+    background-position: center ;
+    margin-top: 70px;
+    justify-content: space-between;
+    
   }
   
-  .container-p form .details {
-    margin-top: 50px;
+  .container-r form .details {
+    margin-top: 80px;
   }
   
-  .fields-p {
+  .fields-r {
     display: flex;
     align-items: center;
     justify-content: space-between; 
@@ -27,7 +32,7 @@
     
   }
   
-  .input-field-p label {
+  .input-field-r label {
     display: block;
     font-size: 16px;
     font-style: bold;
@@ -37,18 +42,18 @@
     justify-content: center;
   }
   
-  .input-field-p input {
+  .input-field-r input {
     font-size: 14px;
     font-weight: 400;
     color: black;
     outline: none;
     padding: 0 15px;
     height: 50px;
-    margin: 20px 0;
+    margin: 25px 0;
     size: 100px;
   }
   
-  .input-field-p input[type="date"]:valid {
+  .input-field-r input[type="date"]:valid {
     color: black;
   }
   
@@ -57,6 +62,7 @@
     font-size: 20px;
     font-weight: 600;
     color: black;
+
   
    }
    h1::before{
@@ -67,18 +73,17 @@
     height: 3px;
     width: 27px;
     background-color: #4070f4;
-  
+
    }
   
-   button[type="submit"] {
+   .button[type="submit"] {
     display: block;
     width: 100px;
     margin: auto;
     text-align: center;
     padding: 5px;
     margin-top: 10px;
-    background-color:red;
-  
+    background-color: red;  
     color: white;
    }
    p{
@@ -86,3 +91,4 @@
     color: black;
    }
   
+ 
