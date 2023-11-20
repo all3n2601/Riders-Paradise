@@ -96,10 +96,11 @@ function LandingPage() {
             <BikeShow />
             <Html fullscreen>
               <div className="overlay-content">
-                <h3>THE POWER OF OPPOSITES</h3>
+                <h3 className="heading3">THE POWER OF OPPOSITES</h3>
                 <h1>DUCATI XDIAVEL S</h1>
                 <div className="buttons-in">
                   <button
+                    className="button-app"
                     style={{
                       background: "red",
                       border: "2px solid red",
@@ -113,6 +114,7 @@ function LandingPage() {
                     Test Ride
                   </button>
                   <button
+                    className="button-app"
                     style={{
                       background: "transparent",
                       border: "2px solid white",
@@ -121,8 +123,6 @@ function LandingPage() {
                       cursor: "pointer",
                     }}
                     onClick={routechanege}
-
-                    // user/explore/bikes/654e6695d0ebf3b537eab9cc
                   >
                     Explore
                   </button>

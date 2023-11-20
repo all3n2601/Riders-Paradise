@@ -9,8 +9,6 @@
   min-width: 100vw;
   margin: 0;
   scroll-behavior: smooth;
-  overflow-y: scroll;
-  overflow-x: inherit;
 }
 
 .bike-description {
@@ -110,4 +108,29 @@
   background-image: url("../assets/Bike_background.jpg");
   display: block;
   height: 100vh;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.slide-image {
+  animation: slideInFromLeft 1.5s ease-out;
+}
+
+.carousel-section {
+  background-color: #000000;
+  display: block;
+  overflow: hidden;
+  height: 80vh;
+  width: 100vw;
+}
+.bike-carousel {
+  position: relative;
+  left: 150px;
+  width: 1200px;
 }

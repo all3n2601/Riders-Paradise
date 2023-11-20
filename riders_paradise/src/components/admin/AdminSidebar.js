@@ -8,6 +8,7 @@ import Box from "@mui/material/Box";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import SettingsIcon from "@mui/icons-material/Settings";
 import TwoWheeler from "@mui/icons-material/TwoWheeler";
+import ShoppingCart from "@mui/icons-material/ShoppingCart";
 
 const Sidebar = ({ onSelectItem, defaultSelectedItem }) => {
   const [selectedItem, setSelectedItem] = useState(defaultSelectedItem);
@@ -22,8 +23,8 @@ const Sidebar = ({ onSelectItem, defaultSelectedItem }) => {
       component="nav"
       sx={{
         width: "240px",
-        backgroundColor: "rgb(67, 85, 133)",
-        height: "100vh",
+        backgroundColor: "rgb(35, 45, 63)",
+        height: "120vh",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -36,14 +37,14 @@ const Sidebar = ({ onSelectItem, defaultSelectedItem }) => {
           <Button
             component="div"
             style={{
-              marginBottom: "10px",
+              marginBottom: "20px",
               color: "white",
               padding: "10px",
             }}
             onClick={() => handleItemClick("dashboard")}
           >
             <ListItemIcon>
-              <DashboardIcon />
+              <DashboardIcon style={{ fill: "#fff" }} />
             </ListItemIcon>
             <ListItemText primary="Dashboard" />
           </Button>
@@ -52,32 +53,49 @@ const Sidebar = ({ onSelectItem, defaultSelectedItem }) => {
           <Button
             component="div"
             style={{
-              marginBottom: "10px",
-              color: "white",
-              padding: "10px",
-            }}
-            onClick={() => handleItemClick("settings")}
-          >
-            <ListItemIcon>
-              <SettingsIcon />
-            </ListItemIcon>
-            <ListItemText primary="Settings" />
-          </Button>
-        </ListItem>
-        <ListItem disablePadding>
-          <Button
-            component="div"
-            style={{
-              marginBottom: "10px",
+              marginBottom: "20px",
               color: "white",
               padding: "10px",
             }}
             onClick={() => handleItemClick("addbike")}
           >
             <ListItemIcon>
-              <TwoWheeler />
+              <TwoWheeler style={{ fill: "#fff" }} />
             </ListItemIcon>
             <ListItemText primary="Add Bike" />
+          </Button>
+        </ListItem>
+        <ListItem disablePadding>
+          <Button
+            component="div"
+            style={{
+              marginBottom: "20px",
+              color: "white",
+              padding: "10px",
+            }}
+            onClick={() => handleItemClick("editbike")}
+          >
+            <ListItemIcon>
+              <TwoWheeler style={{ fill: "#fff" }} />
+            </ListItemIcon>
+            <ListItemText primary="Edit Bike" />
+          </Button>
+        </ListItem>
+
+        <ListItem disablePadding>
+          <Button
+            component="div"
+            style={{
+              marginBottom: "150px",
+              color: "white",
+              padding: "10px",
+            }}
+            onClick={() => handleItemClick("orders")}
+          >
+            <ListItemIcon>
+              <ShoppingCart style={{ fill: "#fff" }} />
+            </ListItemIcon>
+            <ListItemText primary="Orders" />
           </Button>
         </ListItem>
       </List>
