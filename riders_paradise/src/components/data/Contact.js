@@ -1,31 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/Contact.css";
 import styled from "styled-components";
+import axios from "axios";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
+const MySwal = withReactContent(Swal);
 
 const ContactInfoContainer = styled.td`
   border: 1px solid black;
   height: 45vh;
   background-color: beige;
-  font-size: 1.2em;
+  font-size: 1em;
   display: flex;
   flex-direction: column;
+left:50px
   font-weight: w100;
   margin-bottom: 10px;
-  align-items: start;
-  justidy-content: start;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Divider = styled.div`
-  display: absolute;
-  border-bottom: 1px solid #333;
-  margin-bottom: 10px;
+  border-top: 1px solid #ccc;
+  margin: 10px 0;
 `;
 
 const ContactItem = styled.div`
-  margin-bottom: 10px;
-  display: relative;
-  align-items: start;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
 `;
 
 const Icon = styled.img`
@@ -33,100 +38,166 @@ const Icon = styled.img`
   margin-right: 5px;
 `;
 
-const Label = styled.span``;
+const Label = styled.span`
+  font-weight: bold;
+  width: 80px;
+  margin-right: 5px;
+`;
 
 const StyledLink = styled.a`
-  text-decoration: none;
-  color: #333;
+  color: red;
+  text-decoration: underline;
 `;
 
 function Contact() {
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [phnno, setPhoneNo] = useState();
+  const [comment, setComment] = useState();
+  const [error, setError] = useState();
+
+  const showAlert = ({ result }) => {
+    MySwal.fire({
+      title: "Submitted Succesfully",
+      text: { result },
+      icon: "success",
+      confirmButtonText: "OK",
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    try {
+      axios
+        .post("http://localhost:4000/user/contact", {
+          name: name,
+          email: email,
+          phnno: phnno,
+          comment: comment,
+        })
+        .then((result) => {
+          if (result.data.status === "Success") {
+            showAlert(result.data.message);
+          }
+        });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div class="body-cotactpage">
       <h2 id="cus-contactpage">CONTACT US</h2>
       <table>
+        {error && (
+          <div className="error-message">
+            <p>Error:</p>
+            <p>Name: {error.name}</p>
+            <p>Message: {error.message}</p>
+          </div>
+        )}
         <td id="first-contactpage">
-          <div class="div-contactpage">Name</div>
-          <input
-            id="box1-contactpage"
-            class="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
-            type="text"
-          />
-          <div class="div-contactpage">Email</div>
-          <input
-            id="box2-contactpage"
-            class="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
-            type="text"
-          />
-          <div class="div-contactpage">Mobile</div>
-          <input
-            id="box3-contactpage"
-            class="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
-            type="text"
-          />
-          <div class="div-contactpage">comment</div>
-          <input
-            id="box4-contactpage"
-            class="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
-            type="text"
-          />
+          <form onSubmit={handleSubmit}>
+            <div class="div-contactpage">Name</div>
+            <input
+              id="box1-contactpage"
+              class="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
+              type="text"
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+            />
+            <div class="div-contactpage">Email</div>
+            <input
+              id="box2-contactpage"
+              class="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
+              type="text"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+            />
+            <div class="div-contactpage">Mobile</div>
+            <input
+              id="box3-contactpage"
+              class="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
+              type="text"
+              value={phnno}
+              onChange={(e) => {
+                setPhoneNo(e.target.value);
+              }}
+            />
+            <div class="div-contactpage">comment</div>
+            <input
+              id="box4-contactpage"
+              class="w3-input-contactpage w3-border-contactpage w3-round-large-contactpage"
+              type="text"
+              value={comment}
+              onChange={(e) => {
+                setComment(e.target.value);
+              }}
+            />
+            <div class="div-contactpage">
+              <button type="submit">SUBMIT</button>
+            </div>
+          </form>
         </td>
-        <ContactInfoContainer>
-          <div className="heading">Contact Information</div>
-          <Divider />
+        <div className="raised-container">
+          <ContactInfoContainer>
+            <Divider />
 
-          <ContactItem>
-            <Icon src="images/pin.png" alt="" />
-            <Label>Address:</Label>
-            <StyledLink href="#" className="details-contactpage">
-              Riders Paradise Chennai TamilNadu
-            </StyledLink>
-          </ContactItem>
+            <ContactItem>
+              <Icon src="images/pin.png" alt="" />
+              <Label>Address:</Label>
+              <StyledLink href="#" className="details-contactpage">
+                Riders Paradise Chennai TamilNadu
+              </StyledLink>
+            </ContactItem>
 
-          <ContactItem>
-            <Icon src="images/call.png" alt="" />
-            <Label>Phone:</Label>
-            <StyledLink
-              href="tel:+919717785190"
-              className="details1-contactpage"
-            >
-              +91-1234567890
-            </StyledLink>
-          </ContactItem>
+            <ContactItem>
+              <Icon src="images/call.png" alt="" />
+              <Label>Phone:</Label>
+              <StyledLink
+                href="tel:+919717785190"
+                className="details1-contactpage"
+              >
+                +91-1234567890
+              </StyledLink>
+            </ContactItem>
 
-          <ContactItem>
-            <Icon src="images/mail.png" alt="" />
-            <Label>Email:</Label>
-            <StyledLink
-              href="mailto:admin@ridersparadise.com"
-              className="details2-contactpage"
-            >
-              admin@ridersparadise.com
-            </StyledLink>
-          </ContactItem>
+            <ContactItem>
+              <Icon src="images/mail.png" alt="" />
+              <Label>Email:</Label>
+              <StyledLink
+                href="mailto:admin@ridersparadise.com"
+                className="details2-contactpage"
+              >
+                admin@ridersparadise.com
+              </StyledLink>
+            </ContactItem>
 
-          <ContactItem>
-            <Icon src="images/mail.png" alt="" />
-            <Label>Nodal Officer:</Label>
-            <StyledLink
-              href="mailto:eshop.support@heromotocorp.com"
-              className="details2-contactpage"
-            >
-              Varun Venkateshs
-            </StyledLink>
-          </ContactItem>
+            <ContactItem>
+              <Icon src="images/mail.png" alt="" />
+              <Label>Nodal Officer:</Label>
+              <StyledLink
+                href="mailto:eshop.support@heromotocorp.com"
+                className="details2-contactpage"
+              >
+                Varun Venkateshs
+              </StyledLink>
+            </ContactItem>
 
-          <ContactItem>
-            <Icon src="images/mail.png" alt="" />
-            <Label>Grievance Officer:</Label>
-            <StyledLink className="details2-contactpage">Manigandan</StyledLink>
-          </ContactItem>
-        </ContactInfoContainer>
+            <ContactItem>
+              <Icon src="images/mail.png" alt="" />
+              <Label>Grievance Officer:</Label>
+              <StyledLink className="details2-contactpage">
+                Manigandan
+              </StyledLink>
+            </ContactItem>
+          </ContactInfoContainer>
+        </div>
       </table>
-      <div class="div-contactpage">
-        <button>SUBMIT</button>
-      </div>
-      <div class="header4-contactpage"></div>
     </div>
   );
 }

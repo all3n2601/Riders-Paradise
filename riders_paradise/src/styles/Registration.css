@@ -1,94 +1,153 @@
+.container-r {
+  position: relative;
+  width: 100vw;
+  max-width: 100vw;
+  padding: 30px;
+  color: white;
+  background: url("../assets//background-signin.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  min-height: 80vh;
 
-  .container-r {
-    position: relative;
-    width: 800px;
-    max-width: 900px;
-    padding: 30px;
-    margin: 0 350px;
-    background-color: white;
-    justify-content: center;
-  }
+}
 
-  .container-r form {
-    position: relative;
-    min-height: 490px;
-    background-color: white;
-    background-size: 542px;
-    background-position: center ;
-    margin-top: 70px;
-    justify-content: space-between;
-    
-  }
-  
-  .container-r form .details {
-    margin-top: 80px;
-  }
-  
-  .fields-r {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; 
-    flex-wrap: wrap;
-    
-  }
-  
-  .input-field-r label {
-    display: block;
-    font-size: 16px;
-    font-style: bold;
-    font-weight: 500;
-    color: black;
-    margin-left: 20px;
-    justify-content: center;
-  }
-  
-  .input-field-r input {
-    font-size: 14px;
-    font-weight: 400;
-    color: black;
-    outline: none;
-    padding: 0 15px;
-    height: 50px;
-    margin: 25px 0;
-    size: 100px;
-  }
-  
-  .input-field-r input[type="date"]:valid {
-    color: black;
-  }
-  
-  h1{
-    position: absolute;
-    font-size: 20px;
-    font-weight: 600;
-    color: black;
+.container-r header {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
 
-  
-   }
-   h1::before{
-    content:"";
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    height: 3px;
-    width: 27px;
-    background-color: #4070f4;
+.container-r form .details {
+  margin-top: 50px;
+}
 
-   }
-  
-   .button[type="submit"] {
-    display: block;
-    width: 100px;
-    margin: auto;
-    text-align: center;
-    padding: 5px;
-    margin-top: 10px;
-    background-color: red;  
-    color: white;
-   }
-   p{
-    text-align: center;
-    color: black;
-   }
-  
- 
+.fields-r {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+}
+
+.input-field-r label {
+  display: block;
+  font-size: 16px;
+  font-style: bold;
+  font-weight: 500;
+  color: black;
+  margin-left: 20px;
+  justify-content: center;
+}
+
+.input-field-r input {
+  font-size: 14px;
+  font-weight: 400;
+  color: black;
+  outline: none;
+  padding: 0 15px;
+  height: 50px;
+  margin: 20px 0;
+  size: 100px;
+}
+
+.input-field-r input[type="date"]:valid {
+  color: black;
+}
+
+.heading1-profile {
+  position: absolute;
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+
+}
+
+.heading1-profile::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 3px;
+  width: 27px;
+  background-color: #4070f4;
+
+}
+
+.btn-profile {
+  /* Common button styles */
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-profile.submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Styles specific to the submit button */
+  background-color: #4caf50;
+  /* Green */
+  color: white;
+}
+
+.btn-profile.submit:hover {
+  /* Styles specific to the submit button */
+  background-color: red;
+  /* Green */
+  color: white;
+}
+
+.btn-profile.privacy {
+  background-color: #2196f3;
+  color: white;
+}
+
+.btn-profile.privacy:hover {
+  background-color: #171819;
+  /* Blue */
+  color: white;
+}
+
+.btn-profile.contact {
+  /* Styles specific to the contact button */
+  background-color: #ff9800;
+  /* Orange */
+  color: white;
+}
+
+.btn-profile.contact:hover {
+  /* Styles specific to the contact button */
+  background-color: #171819;
+  /* Orange */
+  color: white;
+}
+
+.para {
+  text-align: center;
+  color: black;
+}
+
+.button-r {
+  display: flex;
+  flex-direction: row;
+}
+
+.button-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.sec-container-r {
+  background-color: white;
+  position: relative;
+  width: 70vw;
+  height: 70vh;
+  right: -200px;
+  border-radius: 20px;
+  padding: 20px;
+}

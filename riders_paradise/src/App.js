@@ -23,6 +23,7 @@ import { Canvas } from "@react-three/fiber";
 import "../src/styles/styles.css";
 import "./App.css";
 
+import RegistrationPage from "./pages/RegistrationPage";
 import HomePage from "./pages/Homepage";
 import { Ground } from "./models/3dmodel/Ground";
 import { Bike } from "./models/3dmodel/Bike";
@@ -61,6 +62,7 @@ function App() {
           <Route path="/user/explore" element={<ExplorePage />} />
           <Route path="/user/contact" element={<ContactusPage />} />
           <Route path="/user/testride" element={<TestRidePage />} />
+          <Route path="/user/registerbike" element={<RegistrationPage />} />
           <Route path="/user/profile" element={<ProfilePage />} />
           <Route path="/user/payment" element={<Payment/>} />
           <Route

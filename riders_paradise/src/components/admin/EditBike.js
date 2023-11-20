@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../styles/AddBike.css";
 import axios from "axios";
-
+import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
@@ -27,6 +27,8 @@ const EditBikeForm = () => {
   const [quantity, setQuantity] = useState("");
   const [isFeatured, setIsFeatured] = useState(false);
   const [isAvailable, setIsAvailable] = useState(true);
+  const [allBikes, setAllBikes] = useState([]);
+  const [selectedBikeId, setSelectedBikeId] = useState("");
 
   const resetForm = () => {
     setBrand("");
@@ -47,6 +49,51 @@ const EditBikeForm = () => {
     setQuantity("");
     setIsFeatured(false);
     setIsAvailable(true);
+  };
+
+  useEffect(() => {
+    const fetchAllBikes = async () => {
+      try {
+        const response = await axios.get("http://localhost:4000/explore/bikes");
+        setAllBikes(response.data);
+      } catch (error) {
+        console.error("Error fetching bikes:", error);
+      }
+    };
+
+    fetchAllBikes();
+  }, []);
+
+  const handleModelChange = async (selectedModel) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:4000/api/bike/${selectedModel}`
+      );
+      const selectedBike = response.data;
+
+      // Set state with selected bike details
+      setSelectedBikeId(selectedBike._id);
+      setBrand(selectedBike.brand);
+      setModel(selectedBike.model);
+      setYear(selectedBike.year);
+      setType(selectedBike.type);
+      setFrameMaterial(selectedBike.frameMaterial);
+      setFrameSize(selectedBike.frameSize);
+      setColor(selectedBike.color);
+      setPrice(selectedBike.price);
+      setImageURL(selectedBike.imageURL);
+      setDescription(selectedBike.description);
+      setFrameType(selectedBike.specifications.frameType);
+      setGearSystem(selectedBike.specifications.gearSystem);
+      setBrakes(selectedBike.specifications.brakes);
+      setSuspension(selectedBike.specifications.suspension);
+      setWheelSize(selectedBike.specifications.wheelSize);
+      setQuantity(selectedBike.inventory.quantity);
+      setIsFeatured(selectedBike.isFeatured);
+      setIsAvailable(selectedBike.isAvailable);
+    } catch (error) {
+      console.error("Error fetching bike details:", error);
+    }
   };
 
   const handleSubmit = (e) => {
@@ -87,11 +134,11 @@ const EditBikeForm = () => {
     };
 
     axios
-      .post("http://localhost:4000/admin/addbike", bikeData)
+      .put(`http://localhost:4000/admin/editbike/${selectedBikeId}`, bikeData)
       .then((result) => {
         console.log(result);
 
-        if (result.status === 201) {
+        if (result.data.status === "Success") {
           showAlert(result.data.message);
           resetForm();
         }
@@ -107,6 +154,26 @@ const EditBikeForm = () => {
           {error && <div className="error-message">{error}</div>}
           <form onSubmit={handleSubmit}>
             <div className="column">
+              <div className="input-group">
+                <label htmlFor="modelDropdown">Select Model</label>
+                <select
+                  id="modelDropdown"
+                  value={model}
+                  onChange={(e) => {
+                    setModel(e.target.value);
+                    handleModelChange(e.target.value);
+                  }}
+                >
+                  <option value="" disabled>
+                    Select Model
+                  </option>
+                  {allBikes.map((bike) => (
+                    <option key={bike._id} value={bike.model}>
+                      {bike.model}
+                    </option>
+                  ))}
+                </select>
+              </div>
               <div className="input-box">
                 <span className="icon"></span>
                 <input
@@ -118,6 +185,7 @@ const EditBikeForm = () => {
                 />
                 <label htmlFor="brand">Brand Name</label>
               </div>
+
               <div className="input-box">
                 <span className="icon"></span>
                 <input

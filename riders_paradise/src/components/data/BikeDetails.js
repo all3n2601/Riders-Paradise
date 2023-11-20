@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../../styles/BikeDetails.css";
 import { useParams } from "react-router-dom";
-
+import Loader from "../page/loader";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import { useNavigate } from "react-router-dom";
 
 function BikeDetails() {
   const id = useParams()._id;
   const [bike, setBike] = useState(null);
+  let navigate = useNavigate();
 
   useEffect(() => {
     const fetchBikeDetails = async () => {
@@ -27,8 +29,17 @@ function BikeDetails() {
   }, [id]);
 
   if (!bike) {
-    return <div>Loading...</div>; // Add a loading state
+    return <Loader />;
   }
+
+  const handleBook = () => {
+    navigate("/user/registerbike");
+  };
+
+  const handleRide = () => {
+    navigate("/user/testride");
+  };
+
   return (
     <div className="bodyy">
       <section className="bikeimg">
@@ -47,10 +58,14 @@ function BikeDetails() {
             style={{ width: "900px", height: "600px" }}
             className="slide-image"
           />
-          {/* <div className="buttons">
-            <button className="button">Test Ride</button>
-            <button className="button">Pre-Book</button>
-          </div> */}
+          <div className="buttons-det">
+            <button onClick={handleRide} className="button-det">
+              Test Ride
+            </button>
+            <button onClick={handleBook} className="button-det">
+              Pre-Book
+            </button>
+          </div>
         </div>
 
         <h2 className="bike-header">

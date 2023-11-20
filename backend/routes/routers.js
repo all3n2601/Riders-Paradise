@@ -32,7 +32,7 @@ router.post("/login", async (req, res) => {
 });
 
 router.post("/register", async (req, res) => {
-  const { name, email, password } = req.body;
+  const { userName, email, password } = req.body;
   try {
     const existingUser = await mySchemas.Users.findOne({ email });
 
@@ -46,7 +46,7 @@ router.post("/register", async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, salt);
 
     const newUser = new mySchemas.Users({
-      name,
+      userName,
       email,
       password: hashedPassword,
     });
@@ -109,7 +109,33 @@ router.post("/admin/addbike", async (req, res) => {
   }
 });
 
-router.delete("/admin/deletebike/:id", async (req, res) => {
+router.put("/admin/editbike/:_id", async (req, res) => {
+  const bikeId = req.params._id;
+
+  try {
+    const updatedBike = await mySchemas.Bike.findByIdAndUpdate(
+      bikeId,
+      req.body,
+      { new: true } // This option returns the updated document
+    );
+
+    if (updatedBike) {
+      res
+        .status(200)
+        .json({
+          message: "Bike updated successfully",
+          status: "Success",
+          bike: updatedBike,
+        });
+    } else {
+      res.status(404).json({ error: "Bike not found" });
+    }
+  } catch (error) {
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+router.delete("/admin/deletebike/:_id", async (req, res) => {
   const bikeId = req.params.id;
 
   try {
@@ -156,7 +182,11 @@ router.get("/explore/bikes/:_id", async (req, res) => {
 router.post("/user/bookbike", async (req, res) => {
   try {
     const bookNow = await mySchemas.BookNow.create(req.body);
-    res.json(bookNow);
+    res.json({
+      status: "Success",
+      bookNow,
+      message: "Booked successfully",
+    });
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
   }
@@ -168,6 +198,44 @@ router.post("/user/testride", async (req, res) => {
   try {
     const testRide = await mySchemas.TestRide.create(req.body);
     res.json({ status: "Success", testRide });
+  } catch (error) {
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+router.post("/user/contact", async (req, res) => {
+  try {
+    const contactnow = await mySchemas.ContactNow.create(req.body);
+    res.json({
+      status: "Success",
+      contactnow,
+      message: "Request added successfully",
+    });
+  } catch (error) {
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+router.get("/admin/getcontact", async (req, res) => {
+  try {
+    const contactreq = await mySchemas.ContactNow.find();
+    res.json(contactreq);
+  } catch (error) {
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+router.get("/api/bike/:model", async (req, res) => {
+  const model = req.params.model;
+
+  try {
+    const bike = await mySchemas.Bike.findOne({ model });
+
+    if (bike) {
+      res.status(200).json(bike);
+    } else {
+      res.status(404).json({ error: "Bike not found" });
+    }
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
   }

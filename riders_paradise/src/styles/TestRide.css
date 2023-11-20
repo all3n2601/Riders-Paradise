@@ -19,6 +19,42 @@
     border: none;
     cursor: pointer;
     margin-left: 150px;
+    background-color: greenyellow;
+    color: #fff;
+}
+
+.input-testride[type="submit"]:hover {
+    font-weight: 600;
+    width: auto;
+    padding: 10px 50px 10px 50px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-left: 150px;
+    background-color: black;
+}
+
+.input-testride[type="reset"] {
+    font-weight: 600;
+    width: auto;
+    padding: 10px 50px 10px 50px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-left: 150px;
+    background-color: red;
+    color: #fff;
+}
+
+.input-testride[type="reset"]:hover {
+    font-weight: 600;
+    width: auto;
+    padding: 10px 50px 10px 50px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-left: 150px;
+    background-color: black;
 }
 
 .tr-testride {
@@ -81,4 +117,10 @@
 .tickbox {
     color: red;
     padding-right: 15px;
+}
+
+.tr-terms-box {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
 }

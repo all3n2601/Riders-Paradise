@@ -4,7 +4,7 @@ import "../../styles/Signup.css";
 import axios from "axios";
 
 function SignUp() {
-  const [name, setName] = useState();
+  const [userName, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [repassword, setRePassword] = useState();
@@ -16,12 +16,12 @@ function SignUp() {
     if (password === repassword) {
       axios
         .post("http://localhost:4000/register", {
-          name,
+          userName,
           email,
           password,
         })
         .then((result) => {
-          console.alert(result);
+          console.log(result);
           navigate("/login");
         })
         .catch((err) => console.log(err));
