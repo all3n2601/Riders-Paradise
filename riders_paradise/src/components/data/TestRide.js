@@ -96,14 +96,18 @@ function TestRide() {
         </div>
       )}
       <form onSubmit={handleSubmit}>
-        <table>
-          <tr className="tr-testride">
-            <td className="td-testride">
+
+        
+          
+        
+
+        <div className="col1-testride">
+            <div className="td-testride">
               <label className="label-testride" for="model">
                 Model interested in<span className="span-testride">*</span>
               </label>
-            </td>
-            <td className="td-testride">
+            </div>
+            <div className="td-testride">
               <select
                 className="model"
                 value={selectedModel}
@@ -116,13 +120,65 @@ function TestRide() {
                   </option>
                 ))}
               </select>
-            </td>
-            <td className="td-testride">
+            </div>
+            <div className="td-testride">
+              <label className="label-testride" for="city">
+                City<span className="span-testride">*</span>
+              </label>
+            </div>
+            <div className="td-testride">
+              <select
+                className="city"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+              >
+                <option value="">Select City</option>
+                {cities.map((city, index) => (
+                  <option key={index} value={city}>
+                    {city}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="td-testride">
+              <label className="label-testride" for="name">
+                Your Name<span className="span-testride">*</span>
+              </label>
+            </div>
+            <div className="td-testride">
+              <input
+                className="input-testride"
+                type="text"
+                placeholder="Your Name"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+            <div className="td-testride">
+              <label className="label-testride" for="phno">
+                Mobile<span className="span-testride">*</span>
+              </label>
+            </div>
+            <div className="td-testride">
+              <input
+                className="input-testride"
+                type="number"
+                id="phno"
+                value={phno}
+                onChange={(e) => setPhno(e.target.value)}
+                placeholder="Your Mobile"
+              />
+            </div>
+        </div>
+
+        <div className="col2-testride">
+            <div className="td-testride">
               <label className="label-testride" for="state">
                 State<span className="span-testride">*</span>
               </label>
-            </td>
-            <td className="td-testride">
+            </div>
+            <div className="td-testride">
               <select
                 className="state"
                 value={state}
@@ -170,34 +226,13 @@ function TestRide() {
                 <option value="Uttarakhand">Uttarakhand</option>
                 <option value="West Bengal">West Bengal</option>
               </select>
-            </td>
-          </tr>
-          <tr className="tr-testride">
-            <td className="td-testride">
-              <label className="label-testride" for="city">
-                City<span className="span-testride">*</span>
-              </label>
-            </td>
-            <td className="td-testride">
-              <select
-                className="city"
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
-              >
-                <option value="">Select City</option>
-                {cities.map((city, index) => (
-                  <option key={index} value={city}>
-                    {city}
-                  </option>
-                ))}
-              </select>
-            </td>
-            <td className="td-testride">
+            </div>
+            <div className="td-testride">
               <label className="label-testride" for="dealer">
                 Dealer<span className="span-testride">*</span>
               </label>
-            </td>
-            <td className="td-testride">
+            </div>
+            <div className="td-testride">
               <select
                 className="dealer"
                 value={dealer}
@@ -210,30 +245,13 @@ function TestRide() {
                   </option>
                 ))}
               </select>
-            </td>
-          </tr>
-          <tr className="tr-testride">
-            <td className="td-testride">
-              <label className="label-testride" for="name">
-                Your Name<span className="span-testride">*</span>
-              </label>
-            </td>
-            <td className="td-testride">
-              <input
-                className="input-testride"
-                type="text"
-                placeholder="Your Name"
-                id="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </td>
-            <td className="td-testride">
+            </div>
+            <div className="td-testride">
               <label className="label-testride" for="email">
                 Email ID<span className="span-testride">*</span>
               </label>
-            </td>
-            <td className="td-testride">
+            </div>
+            <div className="td-testride">
               <input
                 className="input-testride"
                 type="email"
@@ -242,28 +260,11 @@ function TestRide() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-            </td>
-          </tr>
-          <tr className="tr-testride">
-            <td className="td-testride">
-              <label className="label-testride" for="phno">
-                Mobile<span className="span-testride">*</span>
-              </label>
-            </td>
-            <td className="td-testride">
-              <input
-                className="input-testride"
-                type="number"
-                id="phno"
-                value={phno}
-                onChange={(e) => setPhno(e.target.value)}
-                placeholder="Your Mobile"
-              />
-            </td>
-            <td className="td-testride">
+            </div>
+            <div className="td-testride">
               <label className="label-testride">Remarks/Suggestions</label>
-            </td>
-            <td className="td-testride">
+            </div>
+            <div className="td-testride">
               <textarea
                 className="textarea-testride"
                 placeholder="Remarks/Suggestions"
@@ -272,34 +273,38 @@ function TestRide() {
                 onChange={(e) => setRemarks(e.target.value)}
                 rows="3"
               ></textarea>
-            </td>
-          </tr>
-          <tr className="tr-terms-box">
-            <td className="td-terms">
+            </div>
+        </div>
+
+          <div className="btn-testride">
+          <div className="tr-terms-box">
+            <div className="td-terms">
               <input
                 className="tickboxlabel"
                 checked={agreement}
                 onChange={(e) => setAgreement(e.target.checked)}
                 type="checkbox"
               />
-            </td>
-            <td className="td-terms">
+            </div>
+            <div className="td-terms">
               <label className="tickbox">
                 {" "}
                 I agree to the terms and conditions
               </label>
-            </td>
-          </tr>
-          <tr className="td-testride">
-            <td className="td-testride"></td>
-            <td className="td-testride">
+            </div>
+          </div>
+          <div className="td-testride">
+            <div className="td-testride"></div>
+            <div className="td-testride">
               <input className="input-testride" type="submit" value="Submit" />
-            </td>
-            <td className="td-testride">
+            </div>
+            <div className="td-testride">
               <input className="input-testride" type="reset" value="Reset" />
-            </td>
-          </tr>
-        </table>
+            </div>
+          </div>
+          </div>
+
+              
       </form>
     </div>
   );
