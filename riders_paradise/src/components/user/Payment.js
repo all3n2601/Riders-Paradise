@@ -4,7 +4,9 @@ import '../../styles/Payment.css';
 const Payment = () => {
   return (
     <div className="container-pay">
-      <h1>Payment</h1>
+      <div className="headpay">
+      <h1 className='heading-pay'>Payment</h1>
+      </div>
       <form action="#">
         <div className="form-pay">
           <div className="payment details">
@@ -28,7 +30,14 @@ const Payment = () => {
             </div>
           </div>
         </div>
-        <button type='submit'>CHeckout</button>
+        <div className="button-submit">
+            <button
+              className={("Checkout")}
+              type="submit"
+            >
+              Checkout
+            </button>
+        </div>
       </form>
     </div>
   );
