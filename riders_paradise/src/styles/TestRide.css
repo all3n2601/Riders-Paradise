@@ -1,10 +1,11 @@
 .maincontent {
     position: relative;
     top: 20%;
-    left: 50%;
-    transform: translate(-50%);
     height: fit-content;
     min-height: 80vh;
+    background-image: url("../assets/4919.jpg");
+    background-size: cover;
+    color: #fff;
 }
 
 .label-testride {
@@ -58,7 +59,7 @@
 }
 
 .tr-testride {
-    text-align: left;
+    text-align: center;
     padding: 20px;
 }
 
@@ -78,7 +79,7 @@
 }
 
 .city {
-    padding-right: 132px;
+    padding-right: 100px;
 }
 
 .state {
@@ -86,7 +87,7 @@
 }
 
 .model {
-    padding-right: 118px;
+    padding-right: 150px;
 }
 
 .dealer {
@@ -123,4 +124,32 @@
     display: flex;
     align-items: center;
     flex-direction: row;
+}
+
+.col1-testride{
+    display: flex;
+    float: left;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 300px;
+}
+
+.col2-testride{
+    display: flex;
+    float: right;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 100px;
+}
+
+.row-testride{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.btn-testride{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
 }
