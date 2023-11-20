@@ -6,7 +6,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import SettingsIcon from "@mui/icons-material/Settings";
+import Phone from "@mui/icons-material/Phone";
 import TwoWheeler from "@mui/icons-material/TwoWheeler";
 import ShoppingCart from "@mui/icons-material/ShoppingCart";
 
@@ -86,7 +86,7 @@ const Sidebar = ({ onSelectItem, defaultSelectedItem }) => {
           <Button
             component="div"
             style={{
-              marginBottom: "150px",
+              marginBottom: "20px",
               color: "white",
               padding: "10px",
             }}
@@ -96,6 +96,23 @@ const Sidebar = ({ onSelectItem, defaultSelectedItem }) => {
               <ShoppingCart style={{ fill: "#fff" }} />
             </ListItemIcon>
             <ListItemText primary="Orders" />
+          </Button>
+        </ListItem>
+
+        <ListItem disablePadding>
+          <Button
+            component="div"
+            style={{
+              marginBottom: "150px",
+              color: "white",
+              padding: "10px",
+            }}
+            onClick={() => handleItemClick("contacts")}
+          >
+            <ListItemIcon>
+              <Phone style={{ fill: "#fff" }} />
+            </ListItemIcon>
+            <ListItemText primary="Contacts" />
           </Button>
         </ListItem>
       </List>
