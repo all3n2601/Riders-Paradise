@@ -1,17 +1,71 @@
-.img-about{
-  border-radius: 50%;
+.page-about {
+  margin-top: 2%;
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-bottom: 20%;
+  border-radius: 20px;
+  border: 2px solid rgb(209, 225, 250);
+  padding-bottom: 50px;
+}
+
+.links {
+  font-size: 15px;
+  color: rgb(87, 154, 221);
+}
+
+.bio {
+  color: grey;
+  /* font-size: 18px; */
+}
+
+.fa {
+  margin-right: 10%;
+  margin-top: 10%;
+}
+
+.fa-linkedin {
+  color: white;
+  background-color: rgb(39, 138, 204);
+  border-radius: 100%;
+}
+
+.container {
+  text-align: center;
+}
+
+.main-container {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-bottom: 2%;
+  border-radius: 20px;
+  background-color: rgb(228, 227, 227);
+}
+
+.bottom-container {
+  margin: auto;
+}
+
+.first {
+  width: 35%;
+}
+
+.container-fluid {
+  margin-top: 2rem;
 }
 
 .p-about{
+  color: tomato;
+}
+
+.h-about {
+  color: rgb(70, 131, 192);
+}
+
+.Link {
+  text-decoration: none;
+  font-size: 22px;
   color: black;
-  
-}
-
-.img-container{
-  background-color: blueviolet;
-  text-align: center;
-}
-
-.card-about{
-  text-align: center;
 }
