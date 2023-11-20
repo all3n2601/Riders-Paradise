@@ -5,16 +5,16 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
   userName: { type: String, required: [true, "Enter UserName"] },
-  mobileNumber: { type: String },
-  address: { type: String },
-  country: { type: String },
-  city: { type: String },
-  state: { type: String },
-  pincode: { type: String },
-  ownershipStatus: { type: String },
-  financeRequired: { type: String },
-  dateofBirth: { type: Date },
-  gender: { type: String },
+  mobileNumber: { type: String, default: "" },
+  address: { type: String, default: "" },
+  country: { type: String, default: "" },
+  city: { type: String, default: "" },
+  state: { type: String, default: "" },
+  pincode: { type: String, default: "" },
+  ownershipStatus: { type: String, default: "" },
+  financeRequired: { type: String, default: "" },
+  dateofBirth: { type: Date, default: "" },
+  gender: { type: String, default: "" },
   email: {
     type: String,
     required: [true, "Please enter an email"],
@@ -137,26 +137,47 @@ const TestRide = mongoose.model("TestRide", testRideSchema, "testRides");
 const bookNowSchema = new Schema({
   model: { type: String, required: [true, "Select Model"] },
   state: { type: String, required: [true, "Select State"] },
+  address: { type: String, required: [true, "Enter Address"] },
+  country: { type: String, required: [true, "Select Country"] },
   city: { type: String, required: [true, "Select City"] },
+  pincode: { type: String, required: [true, "Select PinCode"] },
   dealer: { type: String, required: [true, "Select Dealer"] },
   name: { type: String, required: [true, "Enter Your Name"] },
   email: { type: String, required: [true, "Enter Your Email"] },
   phno: { type: String, required: [true, "Enter Your Mobile"] },
-  remarks: { type: String },
-  agreeTerms: {
-    type: Boolean,
-    required: [true, "You must agree to the terms and conditions"],
+  paymentMethod: {
+    type: String,
+    required: [true, "Enter Your Payment Method"],
   },
+  ownershipStatus: {
+    type: String,
+    required: [true, "Enter Your Ownership Status"],
+  },
+  financeRequired: {
+    type: String,
+    required: [true, "Enter If Finance Required"],
+  },
+
   submissionDate: { type: Date, default: Date.now, required: true },
 });
 
 const BookNow = mongoose.model("BookNow", bookNowSchema, "booked");
+
+const ContactSchema = new Schema({
+  name: { type: String, required: [true, "Enter Your Name"] },
+  email: { type: String, required: [true, "Enter Your Email"] },
+  phnno: { type: String, required: [true, "Enter Your Number"] },
+  comment: { type: String, required: [true, "Enter Your Comment"] },
+});
+
+const ContactNow = mongoose.model("ContactNow", ContactSchema, "contact");
 
 const mySchemas = {
   Users: Users,
   Bike: Bike,
   TestRide: TestRide,
   BookNow: BookNow,
+  ContactNow: ContactNow,
 };
 
 module.exports = mySchemas;

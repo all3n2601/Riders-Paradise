@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import "../../styles/GridView.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Loader from "../page/loader";
 
 function Gridview() {
   const [bikes, setBikes] = useState([]);
@@ -22,6 +23,10 @@ function Gridview() {
 
     fetchData();
   }, []);
+
+  if (!bikes) {
+    return <Loader />;
+  }
 
   const handleFilter = (filter) => {
     // Apply the filter based on the selected category
@@ -100,8 +105,7 @@ function Gridview() {
               }}
             >
               <div className="bike-info">
-
-                  {bike.brand} {bike.model}
+                {bike.brand} {bike.model}
               </div>
             </div>
           </Link>

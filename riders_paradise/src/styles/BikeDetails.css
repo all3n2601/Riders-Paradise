@@ -25,15 +25,15 @@
   color: #ffffff;
 }
 
-.buttons {
+.buttons-det {
   text-align: center;
   /* Align buttons to the right */
 }
 
-.button {
+.button-det {
   position: relative;
-  top: 500px;
-  left: -250px;
+  top: -150px;
+  right: 70px;
   padding: 20px 30px;
   background-color: rgb(255, 255, 255);
   color: #c22222;
@@ -44,8 +44,8 @@
   font-size: 25px;
 }
 
-.buttons button {
-  margin-right: 150px;
+.buttons-det button {
+  margin-right: 50px;
 }
 
 .bike-details {
@@ -83,6 +83,7 @@
   font-weight: bold;
   color: #ffffff;
 }
+
 .bike-details table td {
   color: #ffffff;
 }
@@ -97,6 +98,7 @@
   margin-top: 0;
   width: 1500px;
 }
+
 .bikeimages {
   background-color: #000000;
   display: block;
@@ -114,10 +116,12 @@
   0% {
     transform: translateX(-100%);
   }
+
   100% {
     transform: translateX(0);
   }
 }
+
 .slide-image {
   animation: slideInFromLeft 1.5s ease-out;
 }
@@ -129,6 +133,7 @@
   height: 80vh;
   width: 100vw;
 }
+
 .bike-carousel {
   position: relative;
   left: 150px;

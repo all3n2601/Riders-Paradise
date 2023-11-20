@@ -66,15 +66,15 @@ function TestRide() {
     e.preventDefault();
 
     const formData = {
-      selectedModel,
-      state,
-      city,
-      dealer,
-      name,
-      email,
-      phno,
-      remarks,
-      agreement,
+      model: selectedModel,
+      state: state,
+      city: city,
+      dealer: dealer,
+      name: name,
+      email: email,
+      phno: phno,
+      remarks: remarks,
+      agreeTerms: agreement,
     };
     axios
       .post("http://localhost:4000/user/testride", formData)
@@ -274,8 +274,8 @@ function TestRide() {
               ></textarea>
             </td>
           </tr>
-          <tr className="tr-testride">
-            <td className="td-testride">
+          <tr className="tr-terms-box">
+            <td className="td-terms">
               <input
                 className="tickboxlabel"
                 checked={agreement}
@@ -283,7 +283,7 @@ function TestRide() {
                 type="checkbox"
               />
             </td>
-            <td className="td-testride">
+            <td className="td-terms">
               <label className="tickbox">
                 {" "}
                 I agree to the terms and conditions
