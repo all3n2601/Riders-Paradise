@@ -41,7 +41,7 @@ import ForgotpasswordPage from "./pages/ForgotpasswordPage";
 import BikeDetailsPage from "./pages/BikeDetailsPage";
 import ProfilePage from "./pages/ProfilePage";
 import TestRidePage from "./pages/TestRidePage";
-
+import Payment from "./components/user/Payment"; 
 function App() {
   return (
     <div className="App">
@@ -62,6 +62,7 @@ function App() {
           <Route path="/user/contact" element={<ContactusPage />} />
           <Route path="/user/testride" element={<TestRidePage />} />
           <Route path="/user/profile" element={<ProfilePage />} />
+          <Route path="/user/payment" element={<Payment/>} />
           <Route
             path="/user/explore/bikes/:_id"
             element={<BikeDetailsPage />}
