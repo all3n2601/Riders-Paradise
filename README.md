@@ -6,7 +6,7 @@
 
 <img src="images/Image1.png" alt="Image" width="100%">
 <img src="images/Image2.png" alt="Image" width="100%">
-<img src="images/Image2.png" alt="Image" width="100%">
+<img src="images/Image3.png" alt="Image" width="100%">
 
 
 
