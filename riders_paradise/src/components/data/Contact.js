@@ -9,13 +9,14 @@ import withReactContent from "sweetalert2-react-content";
 const MySwal = withReactContent(Swal);
 
 const ContactInfoContainer = styled.td`
-  border: 1px solid black;
   height: 45vh;
-  background-color: beige;
+  position: relative;
+  background-color: lightblue;
   font-size: 1em;
   display: flex;
   flex-direction: column;
-left:50px
+  top: 100px;
+  left: 50px;
   font-weight: w100;
   margin-bottom: 10px;
   align-items: center;

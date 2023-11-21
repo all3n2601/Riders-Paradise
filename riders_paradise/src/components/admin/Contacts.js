@@ -20,26 +20,55 @@ const Contact = () => {
     fetchBookedBikes();
   }, []);
 
+  const tableStyle = {
+    width: "100%",
+    borderCollapse: "collapse",
+    marginTop: "20px",
+  };
+
+  const cellStyle = {
+    color: "white",
+    border: "1px solid #ddd",
+    padding: "8px",
+    textAlign: "left",
+  };
+
+  const headingCellStyle = {
+    ...cellStyle,
+    backgroundColor: "#f2f2f2",
+    color: "black",
+  };
+
+  const containerStyle = {
+    display: "flex",
+    justifyContent: "space-around",
+    margin: "20px",
+  };
+
+  const sectionStyle = {
+    width: "80%",
+  };
+
   return (
     <div className="bookingdata">
-      <div>
-        <h2>Booked Bikes</h2>
-        <table>
+      <div style={sectionStyle}>
+        <h2 style={{ color: "white" }}>User Requests</h2>
+        <table style={tableStyle}>
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Bike Model</th>
-              <th>Booking Date</th>
-              <th>Payment Mode</th>
+              <th style={headingCellStyle}>Name</th>
+              <th style={headingCellStyle}>Email Id</th>
+              <th style={headingCellStyle}>Phone Number</th>
+              <th style={headingCellStyle}>Comment</th>
             </tr>
           </thead>
           <tbody>
             {bookedBikes.map((bike) => (
               <tr key={bike._id}>
-                <td>{bike.name}</td>
-                <td>{bike.email}</td>
-                <td>{bike.phnno}</td>
-                <td>{bike.comment}</td>
+                <td style={cellStyle}>{bike.name}</td>
+                <td style={cellStyle}>{bike.email}</td>
+                <td style={cellStyle}>{bike.phnno}</td>
+                <td style={cellStyle}>{bike.comment}</td>
               </tr>
             ))}
           </tbody>

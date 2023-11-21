@@ -160,7 +160,6 @@ const EditBikeForm = () => {
           <form onSubmit={handleSubmit}>
             <div className="column">
               <div className="input-group">
-                <label htmlFor="modelDropdown">Select Model</label>
                 <select
                   id="modelDropdown"
                   value={model}
@@ -248,17 +247,6 @@ const EditBikeForm = () => {
                   required
                 />
                 <label htmlFor="frameSize">Frame Size</label>
-              </div>
-              <div className="input-box">
-                <span className="icon"></span>
-                <input
-                  type="text"
-                  name="color"
-                  value={color}
-                  onChange={(e) => setColor(e.target.value)}
-                  required
-                />
-                <label htmlFor="color">Color</label>
               </div>
             </div>
             <div className="column">
@@ -362,6 +350,17 @@ const EditBikeForm = () => {
                   required
                 />
                 <label htmlFor="inventory.quantity">Quantity</label>
+              </div>
+              <div className="input-box">
+                <span className="icon"></span>
+                <input
+                  type="text"
+                  name="color"
+                  value={color}
+                  onChange={(e) => setColor(e.target.value)}
+                  required
+                />
+                <label htmlFor="color">Color</label>
               </div>
               <div className="form-group" style={{ marginBottom: "20px" }}>
                 <div className="form-check">

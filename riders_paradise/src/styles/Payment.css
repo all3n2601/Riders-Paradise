@@ -54,7 +54,7 @@
   color: black;
 }
 
-h1 {
+/* h1 {
   position: absolute;
   font-size: 20px;
   font-weight: 600;
@@ -68,7 +68,7 @@ h1::before {
   height: 3px;
   width: 27px;
   background-color: #4070f4;
-}
+} 
 
 .button[type="submit"] {
   display: block;
@@ -80,7 +80,9 @@ h1::before {
   background-color: red;
   color: white;
 }
+
 p {
   text-align: center;
   color: black;
 }
+*/

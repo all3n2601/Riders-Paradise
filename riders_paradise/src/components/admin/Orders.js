@@ -97,7 +97,7 @@ const Orders = () => {
               <th style={headingCellStyle}>Name</th>
               <th style={headingCellStyle}>Bike Model</th>
               <th style={headingCellStyle}>Booking Date</th>
-              <th style={headingCellStyle}>Payment Mode</th>
+              <th style={headingCellStyle}>Email ID</th>
             </tr>
           </thead>
           <tbody>

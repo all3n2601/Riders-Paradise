@@ -1,18 +1,27 @@
+.whole-profile {
+  background: url('../assets/4919.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
 .container-p {
   position: relative;
   width: 800px;
   max-width: 900px;
   padding: 30px;
   margin: 0 350px;
-  background-color: white;
   justify-content: center;
-  min-height: 85svh;
+  height: 60vh;
+  min-height: 85vh;
+  background-color: rgb(225, 225, 225, 0.25);
+  border-radius: 25px;
 }
 
 .container-p header {
   font-size: 20px;
   font-weight: 600;
-  color: #333;
+  color: white;
 }
 
 .container-p form .details {
@@ -32,7 +41,7 @@
   font-size: 16px;
   font-style: bold;
   font-weight: 500;
-  color: black;
+  color: white;
   margin-left: 20px;
   justify-content: center;
 }

@@ -32,9 +32,9 @@
 
 .button-det {
   position: relative;
-  top: -150px;
+  top: 0px;
   right: 70px;
-  padding: 20px 30px;
+  padding: 10px 20px;
   background-color: rgb(255, 255, 255);
   color: #c22222;
   font-weight: bold;
@@ -91,7 +91,7 @@
 .bike-header {
   font-weight: bold;
   position: relative;
-  top: -600px;
+  top: -700px;
   left: 50px;
   font-size: 40px;
   text-align: center;

@@ -10,7 +10,7 @@ function Home() {
     <div class="body-homepage">
       <div className="video-container">
         <video src={video} autoPlay loop />
-        <div className="btn-home">
+        {/* <div className="btn-home">
           <button
             className="btns"
             buttonStyle="btn--outline"
@@ -18,7 +18,7 @@ function Home() {
           >
             Get Started
           </button>
-        </div>
+        </div> */}
         <h1 className="h-home">Adventure Awaits</h1>
         <p className="p-home">What are you waiting for??</p>
       </div>

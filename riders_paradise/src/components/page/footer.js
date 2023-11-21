@@ -11,8 +11,10 @@ function Footer() {
       }}
     >
       <div className="license">
-        <span>This Project is Done By Team135 and licensed under GNU</span>
+        <span>This Project is Done By Team135</span>
       </div>
+      <div>Riders Paradise</div>
+      <div>Chennai India</div>
     </footer>
   );
 }
