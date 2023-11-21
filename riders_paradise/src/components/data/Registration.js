@@ -114,7 +114,7 @@ const Registration = () => {
 
   return (
     <div className="container-r">
-      <h1>Bike Registration</h1>
+      <h1 style={{ position: "relative", left: "500px" }}>Bike Registration</h1>
       <div className="sec-container-r">
         <form onSubmit={handleSubmit}>
           <div className="form-r">
@@ -223,6 +223,7 @@ const Registration = () => {
                   />
                 </div>
                 <div className="input-field-r">
+                  <label>City</label>
                   <select
                     className="city"
                     value={city}

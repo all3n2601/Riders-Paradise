@@ -4,6 +4,8 @@ import Dashboard from "../admin/AdminDashboard";
 import AddBike from "../admin/AddBike";
 import AdminHeader from "../admin/AdminHeader";
 import EditBikeForm from "../admin/EditBike";
+import Orders from "../admin/Orders";
+import Contact from "../admin/Contacts";
 
 const Admin = () => {
   const [selectedItem, setSelectedItem] = useState(null);
@@ -30,7 +32,8 @@ const Admin = () => {
         {selectedItem === "settings" && <h1>Settings Page</h1>}
         {selectedItem === "addbike" && <AddBike />}
         {selectedItem === "editbike" && <EditBikeForm />}
-        {selectedItem === "orders" && <h1>Order Page</h1>}
+        {selectedItem === "orders" && <Orders />}
+        {selectedItem === "contacts" && <Contact />}
       </div>
     </div>
   );
