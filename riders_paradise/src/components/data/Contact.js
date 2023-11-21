@@ -69,7 +69,7 @@ function Contact() {
     e.preventDefault();
     try {
       axios
-        .post("http://localhost:4000/user/contact", {
+        .post("https://riders-paradise.onrender.com/user/contact", {
           name: name,
           email: email,
           phnno: phnno,

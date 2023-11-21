@@ -87,7 +87,7 @@ const AddBikeForm = () => {
     };
 
     axios
-      .post("http://localhost:4000/admin/addbike", bikeData)
+      .post("https://riders-paradise.onrender.com/admin/addbike", bikeData)
       .then((result) => {
         console.log(result);
 

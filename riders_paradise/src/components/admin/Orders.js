@@ -9,7 +9,7 @@ const Orders = () => {
     const fetchBookedBikes = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/admin/getbooked`
+          `https://riders-paradise.onrender.com/admin/getbooked`
         );
         setBookedBikes(response.data);
       } catch (error) {
@@ -24,7 +24,7 @@ const Orders = () => {
     const fetchTestBikes = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/admin/gettestrides`
+          `https://riders-paradise.onrender.com/admin/gettestrides`
         );
         setTestBikes(response.data);
       } catch (error) {

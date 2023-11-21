@@ -73,7 +73,9 @@ const Registration = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/explore/bikes");
+        const response = await axios.get(
+          "https://riders-paradise.onrender.com/explore/bikes"
+        );
         setBikes(response.data);
       } catch (error) {
         console.error("Error fetching bikes:", error);
@@ -103,7 +105,7 @@ const Registration = () => {
     };
     console.log(formData);
     axios
-      .post("http://localhost:4000/user/bookbike", formData)
+      .post("https://riders-paradise.onrender.com/user/bookbike", formData)
       .then((result) => {
         if (result.data.status === "Success") {
           showAlert(result.data.message);

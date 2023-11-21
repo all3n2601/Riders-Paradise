@@ -13,7 +13,9 @@ function Gridview() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/explore/bikes"); // Adjust the API endpoint
+        const response = await axios.get(
+          "https://riders-paradise.onrender.com/explore/bikes"
+        ); // Adjust the API endpoint
         setBikes(response.data);
         setFilteredBikes(response.data);
       } catch (error) {

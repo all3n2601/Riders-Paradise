@@ -15,7 +15,7 @@ function SignUp() {
     e.preventDefault();
     if (password === repassword) {
       axios
-        .post("http://localhost:4000/register", {
+        .post("https://riders-paradise.onrender.com/register", {
           userName,
           email,
           password,

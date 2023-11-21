@@ -9,7 +9,7 @@ const Contact = () => {
     const fetchBookedBikes = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/admin/getcontact`
+          `https://riders-paradise.onrender.com/admin/getcontact`
         );
         setBookedBikes(response.data);
       } catch (error) {

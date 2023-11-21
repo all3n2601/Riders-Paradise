@@ -66,7 +66,7 @@ const Profile = () => {
     };
 
     axios
-      .put("http://localhost:4000/user/updateprofile", {
+      .put("https://riders-paradise.onrender.com/user/updateprofile", {
         userId,
         updatedProfile,
       })
