@@ -2,7 +2,9 @@
 
 
 ##Screenshots
-
+<img src="images/Image1.png" alt="Image" width="50%">
+<img src="images/Image1.png" alt="Image" width="50%">
+<img src="images/Image1.png" alt="Image" width="50%">
 
 
 
