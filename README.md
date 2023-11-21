@@ -1,10 +1,12 @@
 #  🏍️ **Riders Paradise: Your Motorcycle Haven** 🏍️ 
 
 
-##Screenshots
-<img src="images/Image1.png" alt="Image" width="50%">
-<img src="images/Image1.png" alt="Image" width="50%">
-<img src="images/Image1.png" alt="Image" width="50%">
+## ~ **Screenshots** ~
+
+
+<img src="images/Image1.png" alt="Image" width="100%">
+<img src="images/Image2.png" alt="Image" width="100%">
+<img src="images/Image2.png" alt="Image" width="100%">
 
 
 
