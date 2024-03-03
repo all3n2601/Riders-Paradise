@@ -1,13 +1,15 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { setCurrentUser, setUserRole } from "../auth/auth";
+import {useDispatch} from 'react-redux';
+import { logoutState } from "../../redux/userSlice";
 
 const UserHeader = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const handleLogOut = () => {
-    setCurrentUser(null);
-    setUserRole(null);
+    dispatch(logoutState());
     navigate("/");
   };
 

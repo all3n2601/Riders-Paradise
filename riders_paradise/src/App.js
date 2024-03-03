@@ -42,38 +42,47 @@ import ForgotpasswordPage from "./pages/ForgotpasswordPage";
 import BikeDetailsPage from "./pages/BikeDetailsPage";
 import ProfilePage from "./pages/ProfilePage";
 import TestRidePage from "./pages/TestRidePage";
-import Payment from "./components/user/Payment"; 
+import Payment from "./components/user/Payment";
+import { PersistGate } from "redux-persist/integration/react";
+import { Provider } from "react-redux";
+import { persistor, store } from "./redux/store.js";
+
+import PrivateRoute from "./components/routes/PrivateRoute.js";
+
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Routes>
-          <Route exact path="/" element={<LandingPage />} />
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <Router>
+          <Routes>
+            <Route exact path="/" element={<LandingPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignupPage />} />
+            <Route path="/password/forgot" element={<ForgotpasswordPage />} />
+            <Route path="/explore" element={<ExplorePage />} />
+            <Route path="/contact" element={<ContactusPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            
+            <Route element={<PrivateRoute />}>
+              <Route path="/user/home" element={<HomePage />} />
+              <Route path="/user/about" element={<AboutPage />} />
+              <Route path="/user/explore" element={<ExplorePage />} />
+              <Route path="/user/contact" element={<ContactusPage />} />
+              <Route path="/user/testride" element={<TestRidePage />} />
+              <Route path="/user/registerbike" element={<RegistrationPage />} />
+              <Route path="/user/profile" element={<ProfilePage />} />
+              <Route path="/user/payment" element={<Payment />} />
+              <Route
+                path="/user/explore/bikes/:_id"
+                element={<BikeDetailsPage />}
+              />
 
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/signup" element={<SignupPage />} />
-          <Route path="/password/forgot" element={<ForgotpasswordPage />} />
-          <Route path="/explore" element={<ExplorePage />} />
-          <Route path="/contact" element={<ContactusPage />} />
-          <Route path="/about" element={<AboutPage />} />
-
-          <Route path="/user/home" element={<HomePage />} />
-          <Route path="/user/about" element={<AboutPage />} />
-          <Route path="/user/explore" element={<ExplorePage />} />
-          <Route path="/user/contact" element={<ContactusPage />} />
-          <Route path="/user/testride" element={<TestRidePage />} />
-          <Route path="/user/registerbike" element={<RegistrationPage />} />
-          <Route path="/user/profile" element={<ProfilePage />} />
-          <Route path="/user/payment" element={<Payment/>} />
-          <Route
-            path="/user/explore/bikes/:_id"
-            element={<BikeDetailsPage />}
-          />
-
-          <Route path="/admin" element={<Admin />} />
-        </Routes>
-      </Router>
-    </div>
+              <Route path="/admin" element={<Admin />} />
+            </Route>
+          </Routes>
+        </Router>
+      </PersistGate>
+    </Provider>
   );
 }
 

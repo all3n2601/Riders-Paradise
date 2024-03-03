@@ -2,7 +2,15 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../styles/Signin.css";
 import axios from "axios";
-import { setCurrentUser, setUserRole } from "./auth";
+import { useDispatch, useSelector } from "react-redux";
+import Swal from "sweetalert2";
+import {
+  loginFailed,
+  loginState,
+  loginSuccess,
+  loginProgress
+} from "../../redux/userSlice";
+
 
 function Login() {
   const [email, setEmail] = useState();
@@ -10,27 +18,38 @@ function Login() {
   const navigate = useNavigate();
   const [error, setError] = useState("");
 
+  const dispatch = useDispatch();
+  const loading = useSelector((state) => state.user.loading);
+
   const handleSubmit = (e) => {
+    dispatch(loginProgress());
     e.preventDefault();
     axios
       .post("https://riders-paradise.onrender.com/login", { email, password })
       .then((result) => {
-        console.log(result);
-
         if (result.data.status === "Success") {
-          const { user, role } = result.data; // Assuming the role information is included in the response
-          setCurrentUser(result.data.user);
-
-          setUserRole(result.data.role);
-
-          if (role === "admin") {
+          const user = result.data.user;
+          if (result.data.role === "admin") {
+            dispatch(loginState(user));
             navigate("/admin");
+            dispatch(loginSuccess());
           } else {
+            dispatch(loginState(user));
             navigate("/user/home");
+            dispatch(loginSuccess());
+            
           }
         }
       })
-      .catch((err) => setError(err));
+      .catch((err) => {
+        dispatch(loginFailed());
+        Swal.fire({
+          title: "Invalid Credentials!",
+          icon: "error",
+          confirmButtonText: "Ok",
+          text: "Please Check Your Credentials and Try Again!",
+        });
+      });
   };
 
   return (

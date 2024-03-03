@@ -72,7 +72,6 @@ router.put("/user/updateprofile", async (req, res) => {
   } catch (error) {
     console.error("Error updating profile:", error.message);
 
-    // Handle validation error
     if (error.name === "ValidationError") {
       const validationErrors = Object.values(error.errors).map(
         (err) => err.message
