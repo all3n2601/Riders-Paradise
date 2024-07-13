@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const router = require("./routes/routers");
 const mongoose = require("mongoose");
 require("dotenv/config");
+const limiter = require("./middlewares/rateLimiter");
 
 const app = express();
 
@@ -18,7 +19,7 @@ const corOptions = {
 
 app.use(cors(corOptions));
 
-app.use("/", router);
+app.use("/",limiter, router);
 
 const dbOptions = {
   useNewUrlParser: true,
