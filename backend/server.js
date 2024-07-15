@@ -1,37 +1,33 @@
-const express = require("express");
-const cors = require("cors");
-const bodyParser = require("body-parser");
-const router = require("./routes/routers");
-const mongoose = require("mongoose");
 require("dotenv/config");
+const express = require("express");
+const bodyParser = require("body-parser");
+const corsMiddleware = require("./middlewares/cors.js");
 const limiter = require("./middlewares/rateLimiter");
-
+const connectToDatabase = require("./db/dbConnection.js");
 const app = express();
+const router = express.Router();
+
+const adminRoute = require("./routes/adminRoute.js");
+const bikeRoute = require("./routes/bikeRoute.js");
+const userRoute = require("./routes/userRoute.js");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(corsMiddleware);
 
-const corOptions = {
-  origin: "*",
-  credentials: true,
-  optionSuccessStatus: 200,
-};
+app.use("/v2/admin", adminRoute);
+app.use("/v2/bike", bikeRoute);
+app.use("/v2/user", userRoute);
 
-app.use(cors(corOptions));
-
-app.use("/",limiter, router);
-
-const dbOptions = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-};
-
-mongoose
-  .connect(process.env.DB_URI, dbOptions)
-  .then(() => console.log("DB Connected!"))
-  .catch((err) => console.log(err));
-
-const port = process.env.PORT;
-const server = app.listen(port, () => {
-  console.log("Server running on port ${port}");
-});
+app.use("/", limiter, router);
+(async () => {
+  try {
+    await connectToDatabase();
+    const port = process.env.PORT || 4451;
+    const server = app.listen(port, () => {
+      console.log(`Server running on port: ${port}`);
+    });
+  } catch (error) {
+    console.error("Failed to start the server:", error.message);
+  }
+})();
